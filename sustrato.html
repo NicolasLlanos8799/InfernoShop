@@ -60,11 +60,48 @@ https://templatemo.com/tm-546-sixteen-clothing
               <li class="nav-item active">
                 <a class="nav-link" href="index.html">Productos</a>
               </li>
+              <li class="nav-item">
+                <button class="btn btn-success" id="carrito-btn" onclick="enviarCarrito()">Carrito</button>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    
+
+    <!-- JAVA SCRIPT -->
+    <script>
+      var carritoDeSemillas = [];
+      function guardarValor(valorBoton) {
+      if (!carritoDeSemillas.includes(valorBoton)) {
+        carritoDeSemillas.push(valorBoton);
+        console.log("Valor del botón: " + carritoDeSemillas);
+      } else {
+        console.log("El valor ya existe en el array: " + valorBoton);
+      }
+      }
+
+      function cambiarColor(idBoton) {
+        var boton = document.getElementById(idBoton); // seleccionar el botón
+        boton.style.backgroundColor = "green"; // cambiar el color de fondo del botón
+      }
+
+      function enviarCarrito() {
+        // Unir los valores del carrito de semillas en un string
+        var mensaje = "Mi pedido: " + carritoDeSemillas.join(", ");
+        
+        // Reemplazar los espacios en blanco por %20 para crear el enlace de WhatsApp
+        mensaje = mensaje.replace(/ /g, "%20");
+        
+        // Crear el enlace de WhatsApp con el número y mensaje
+        var enlace = "https://wa.me/543425087441/?text=" + mensaje;
+        
+        // Abrir el enlace en una nueva pestaña
+        window.open(enlace);
+      }
+
+    </script>
 
     <!-- Page Content -->
     <div class="page-heading sustrato-heading header-text">
@@ -119,7 +156,8 @@ https://templatemo.com/tm-546-sixteen-clothing
                         </div>
                         <div class="down-content">
                           <h6>$950.00</h6>
-                          <button id="mi-boton" class="btn btn-primary">Sumar al carrito</button>
+                          <button id="boton-gloriosa-fotop" value="La gloriosa fotoperiodica" class="btn btn-primary" onclick="guardarValor(this.value); cambiarColor('boton-gloriosa-fotop')">Sumar</button>
+
                         </div>
                       </div>
                     </div>
@@ -146,7 +184,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                         </div>
                         <div class="down-content">
                           <h6>$950.00</h6>
-                          <a href="" class="btn btn-primary">Comprar</a>
+                          <button id="boton-gloriosa-fotop" value="La gloriosa fotoperiodica2" class="btn btn-primary" onclick="guardarValor(this.value)">Sumar</button>
                         </div>
                       </div>
                     </div>
@@ -478,13 +516,14 @@ https://templatemo.com/tm-546-sixteen-clothing
           }
       }
 
-      document.getElementById("mi-boton").addEventListener("click", function() {
-      var contenidoEtiqueta = document.getElementById("mi-etiqueta").innerHTML;
-      console.log(contenidoEtiqueta);
-     // hacer algo con el contenido de la etiqueta, por ejemplo almacenarlo en una variable
-});
+      var valorBoton;
 
+      function guardarValor() {
+        valorBoton = document.getElementById("mi-boton").value;
+        console.log("Valor del botón: " + valorBoton);
+      }
     </script>
+    
 
 
   </body>
