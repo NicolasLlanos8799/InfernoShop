@@ -95,6 +95,8 @@ https://templatemo.com/tm-546-sixteen-clothing
           <div class="col-md-12">
             <div class="filters-content">
                 <div class="row grid">
+
+
                     <div class="col-lg-3 col-md-3 all des">
                       <div class="product-item">
                         <div id="carrousel-image-1" class="carousel slide" data-bs-ride="carousel">
@@ -117,7 +119,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                         </div>
                         <div class="down-content">
                           <h6>$950.00</h6>
-                          <a href="" class="btn btn-primary">Comprar</a>
+                          <button id="mi-boton" class="btn btn-primary">Sumar al carrito</button>
                         </div>
                       </div>
                     </div>
@@ -437,7 +439,7 @@ https://templatemo.com/tm-546-sixteen-clothing
           <!-- <li><a href="sustrato2.html"><i class="fa fa-angle-double-right"></i></a></li>
         </ul>
       </div>
-    </div> --> -->
+    </div> -->
 
     
     <footer>
@@ -475,6 +477,13 @@ https://templatemo.com/tm-546-sixteen-clothing
           t.style.color='#fff';
           }
       }
+
+      document.getElementById("mi-boton").addEventListener("click", function() {
+      var contenidoEtiqueta = document.getElementById("mi-etiqueta").innerHTML;
+      console.log(contenidoEtiqueta);
+     // hacer algo con el contenido de la etiqueta, por ejemplo almacenarlo en una variable
+});
+
     </script>
 
 
