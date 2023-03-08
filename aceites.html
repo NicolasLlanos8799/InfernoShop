@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-        <!-- Archivos CSS de Bootstrap -->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 
-    <!-- Archivos JavaScript de Bootstrap -->
-    <script src="vendor/bootstrap/css/bootstrap.min.js"></script>
+    <title>Iluminación</title>
 
-    <title>Semillas</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- LLAMANDO JAVA SCRIPT FUNCIONES ORDER -->
+      <script src="assets/js/funcionesParaLaOrden.js"></script>
 <!--
 
 TemplateMo 546 Sixteen Clothing
@@ -46,7 +46,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="sustrato.html"><h2>Semillas<em></em></h2></a>
+          <a class="navbar-brand" href="aceites.html"><h2>Iluminación<em></em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,70 +54,33 @@ https://templatemo.com/tm-546-sixteen-clothing
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="index.html">Inicio
-                  <span class="sr-only"></span>
+                  <span class="sr-only">(current)</span>
                 </a>
               </li> 
               <li class="nav-item active">
                 <a class="nav-link" href="index.html">Productos</a>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-success" id="carrito-btn" onclick="enviarCarrito()">Carrito</button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    
-
-    <!-- JAVA SCRIPT -->
-    <script>
-      var carritoDeSemillas = [];
-      function guardarValor(valorBoton) {
-      if (!carritoDeSemillas.includes(valorBoton)) {
-        carritoDeSemillas.push(valorBoton);
-        console.log("Valor del botón: " + carritoDeSemillas);
-      } else {
-        console.log("El valor ya existe en el array: " + valorBoton);
-      }
-      }
-
-      function cambiarColor(idBoton) {
-        var boton = document.getElementById(idBoton); // seleccionar el botón
-        boton.style.backgroundColor = "green"; // cambiar el color de fondo del botón
-      }
-
-      function enviarCarrito() {
-        // Unir los valores del carrito de semillas en un string
-        var mensaje = "Mi pedido: " + carritoDeSemillas.join(", ");
-        
-        // Reemplazar los espacios en blanco por %20 para crear el enlace de WhatsApp
-        mensaje = mensaje.replace(/ /g, "%20");
-        
-        // Crear el enlace de WhatsApp con el número y mensaje
-        var enlace = "https://wa.me/543425087441/?text=" + mensaje;
-        
-        // Abrir el enlace en una nueva pestaña
-        window.open(enlace);
-      }
-
-    </script>
 
     <!-- Page Content -->
-    <div class="page-heading sustrato-heading header-text">
+    <div class="page-heading iluminacion-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
               <!-- <h4>new arrivals</h4> -->
-              <h2>Semillas</h2>
+              <h2>Iluminación</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    
+     
     <div class="products">
       <div class="container">
         <div class="row">
@@ -458,26 +421,27 @@ https://templatemo.com/tm-546-sixteen-clothing
                         </div>
                       </div>
                     </div>
-                    
-                    
                 </div>
+
+                <button style="width:100%;" onclick="obtenerCarrito();enviarCarrito()">Realizar pedido</button>
+                <button style="width:100%;" onclick="irAPagina('semillas.html')">Ir a aceites y seguir comprando</button>
             </div>
           </div>
        </div>
       </div>
     </div>
     
-    <!-- <div class="products">
+    <div class="products">
       <div class="col-md-12">
         <ul class="pages">
           <li class="active"><a href="#">1</a></li>
-          <li><a href="sustrato2.html">2</a></li>
+          <li><a href="iluminacion2.html">2</a></li>
           <!-- <li><a href="#">3</a></li>
           <li><a href="#">4</a></li> -->
-          <!-- <li><a href="sustrato2.html"><i class="fa fa-angle-double-right"></i></a></li>
+          <li><a href="iluminacion2.html"><i class="fa fa-angle-double-right"></i></a></li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
     
     <footer>
@@ -515,15 +479,7 @@ https://templatemo.com/tm-546-sixteen-clothing
           t.style.color='#fff';
           }
       }
-
-      var valorBoton;
-
-      function guardarValor() {
-        valorBoton = document.getElementById("mi-boton").value;
-        console.log("Valor del botón: " + valorBoton);
-      }
     </script>
-    
 
 
   </body>
