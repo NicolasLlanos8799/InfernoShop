@@ -493,6 +493,8 @@ body {
 	  right: 30px;
 	  font-size: 18px;
 	  color: #121212;
+	  display: flex;
+    align-items: center;
   }
   
   .product-item .down-content p {
