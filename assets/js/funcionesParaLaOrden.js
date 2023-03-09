@@ -2,11 +2,12 @@
 
 
 var carritoDeSemillas = obtenerCarrito();
+var currentValue = 1;
 function guardarValor(valorBoton) {
   if (!carritoDeSemillas.includes(valorBoton)) {
     carritoDeSemillas.push(valorBoton);
     guardarCarrito(carritoDeSemillas);
-    console.log("Valor del botón: " + carritoDeSemillas);
+    console.log("Valor del botón: " + carritoDeSemillas + "Cantidad: " + currentValue);
   } else {
     console.log("El valor ya existe en el array: " + valorBoton);
   }
@@ -41,9 +42,13 @@ function irAPagina(pagina) {
 }
 
 window.addEventListener('load', function() {
-  const decreaseButton = document.querySelector('.decrease-button');
-  const increaseButton = document.querySelector('.increase-button');
-  const quantityInput = document.querySelector('.quantity-input');
+  // Obtener todos los elementos con la clase "quantity-input"
+var quantityInputs = document.querySelectorAll(".quantity-input");
+
+// Iterar sobre los elementos y agregar los eventos a los botones
+quantityInputs.forEach(function(quantityInput) {
+  const decreaseButton = quantityInput.previousElementSibling;
+  const increaseButton = quantityInput.nextElementSibling;
 
   function decreaseQuantity() {
     let currentValue = parseInt(quantityInput.value);
@@ -53,7 +58,7 @@ window.addEventListener('load', function() {
   }
 
   function increaseQuantity() {
-    let currentValue = parseInt(quantityInput.value);
+    currentValue = parseInt(quantityInput.value);
     if (currentValue < 10) {
       quantityInput.value = currentValue + 1;
     }
@@ -68,5 +73,7 @@ window.addEventListener('load', function() {
   decreaseButton.addEventListener('click', decreaseQuantity);
   increaseButton.addEventListener('click', increaseQuantity);
   quantityInput.addEventListener('change', getValue);
+});
+
 });
 
