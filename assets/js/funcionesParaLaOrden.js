@@ -5,14 +5,15 @@ var carritoDeSemillas = obtenerCarrito();
 var currentValue = 1; // Variable global
 
 function guardarValor(valorBoton) {
-  // if (!carritoDeSemillas.includes(valorBoton)) {
-    carritoDeSemillas.push(valorBoton);
-    guardarCarrito(carritoDeSemillas);
-    console.log("Valor del botón: " + carritoDeSemillas + " cantidad de packs: " + currentValue);
-  // } else {
-  //   console.log("El valor ya existe en el array: " + valorBoton);
-  // }
+  var quantityInput = event.target.closest('.down-content').querySelector('.quantity-input');
+  var quantityValue = parseInt(quantityInput.value);
+  var item = { boton: valorBoton, quantity: quantityValue };
+
+  carritoDeSemillas.push(item);
+  guardarCarrito(carritoDeSemillas);
+  console.log("Valor del botón: " + valorBoton + ", cantidad de packs: " + quantityValue);
 }
+
 
 function obtenerCarrito() {
   var carritoGuardado = localStorage.getItem('carritoDeSemillas');
@@ -32,15 +33,21 @@ function cambiarColor(idBoton) {
 }
 
 function enviarCarrito() {
+  var total = 0;
   var mensaje = "Mi pedido de semillas es: ";
   for (var i = 0; i < carritoDeSemillas.length; i++) {
-    mensaje += carritoDeSemillas[i] + " x " + currentValue + ", ";
+    var item = carritoDeSemillas[i];
+    var subtotal = item.quantity * parseInt(item.boton);
+    total += subtotal;
+    mensaje += item.boton + " x " + item.quantity + ", ";
   }
   mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
   mensaje = mensaje.replace(/ /g, "%20");
+  mensaje += "%0A" + "Total: $" + total;
   var enlace = "https://wa.me/543425087441/?text=" + mensaje;
   window.open(enlace);
 }
+
 
 function irAPagina(pagina) {
   window.location.href = pagina;
