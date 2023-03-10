@@ -43,11 +43,17 @@ function enviarCarrito() {
   }
   mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
   mensaje = mensaje.replace(/ /g, "%20");
-  mensaje += "%0A" + "Total: $" + total;
+  mensaje += "%0A"
   var enlace = "https://wa.me/543425087441/?text=" + mensaje;
   window.open(enlace);
+  resetearCarritoYRecargarPagina()
 }
 
+function resetearCarritoYRecargarPagina() {
+  carritoDeSemillas = []; // Limpiar carrito
+  guardarCarrito(carritoDeSemillas); // Guardar carrito vacío en localStorage
+  location.reload(); // Recargar página
+}
 
 function irAPagina(pagina) {
   window.location.href = pagina;
