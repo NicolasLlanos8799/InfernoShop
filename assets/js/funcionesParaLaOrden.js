@@ -4,7 +4,7 @@
 var carritoDeSemillas = obtenerCarrito();
 var currentValue = 1; // Variable global
 
-function guardarValorYCantidady(valorBoton) {
+function guardarValorYCantidad(valorBoton) {
   var quantityInput = event.target.closest('.down-content').querySelector('.quantity-input');
   var quantityValue = parseInt(quantityInput.value);
   var item = { boton: valorBoton, quantity: quantityValue };
