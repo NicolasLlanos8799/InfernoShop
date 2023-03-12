@@ -125,7 +125,8 @@ https://templatemo.com/tm-546-sixteen-clothing
                             <input type="number" value="1" min="1" max="10" class="quantity-input">
                             <button class="increase-button">+</button>
                           </div>
-                          <button id="boton-barrio-fotofem" value="Aceite 10ml" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value); cambiarColor('boton-barrio-fotofem')">Sumar al pedido</button>
+                          <button id="boton-aceite-100ml-add" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value); alternarBotones('boton-aceite-100ml-add','boton-aceite-100ml-quit')">Agregar pedido</button>
+                          <button id="boton-aceite-100ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarDelPedido(this.value);alternarBotones('boton-aceite-100ml-quit','boton-aceite-100ml-add')" style="display: none;">Quitar pedido</button>
                         </div>
                         <h6 class="alineacionesH6">Desde $3000 por pack</h6>
                         <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -159,7 +160,8 @@ https://templatemo.com/tm-546-sixteen-clothing
                           <input type="number" value="1" min="1" max="10" class="quantity-input">
                           <button class="increase-button">+</button>
                         </div>
-                        <button id="boton-clerico-fotop" value="Aceite 30ml" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value); cambiarColor('boton-clerico-fotop')">Sumar al pedido</button>
+                        <button id="boton-aceite-10ml-add" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value); alternarBotones('boton-aceite-10ml-add','boton-aceite-10ml-quit')">Agregar pedido</button>
+                        <button id="boton-aceite-10ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarDelPedido(this.value);alternarBotones('boton-aceite-10ml-quit','boton-aceite-10ml-add')" style="display: none;">Quitar pedido</button>
                       </div>
                       <h6 class="alineacionesH6">Desde $3000 por pack</h6>
                       <!-- CONTENIDO DEBAJO DE LA IMAGEN -->

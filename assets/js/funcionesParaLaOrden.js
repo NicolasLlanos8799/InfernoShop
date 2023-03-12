@@ -14,6 +14,36 @@ function guardarValorYCantidad(valorBoton) {
   console.log("Valor del botón: " + valorBoton + ", cantidad de packs: " + quantityValue);
 }
 
+function quitarDelPedido(valorBoton) {
+  var index = -1;
+  for (var i = 0; i < carritoDeSemillas.length; i++) {
+    var item = carritoDeSemillas[i];
+    if (item.boton === valorBoton) {
+      index = i;
+      break;
+    }
+  }
+  if (index > -1) {
+    carritoDeSemillas.splice(index, 1); // Elimina el item del carrito
+    guardarCarrito(carritoDeSemillas);
+    var quantityInput = document.querySelector('.down-content .quantity-input');
+    quantityInput.value = 1; // Resetea la cantidad del input a 1
+    console.log("Valor del botón: " + valorBoton + " eliminado del carrito");
+  }
+}
+function alternarBotones(idBoton1, idBoton2 ) {
+  var boton1 = document.getElementById(idBoton1);
+  var boton2 = document.getElementById(idBoton2);
+  
+  if (boton1.style.display === "none") {
+    boton1.style.display = "block";
+    boton2.style.display = "none";
+  } else {
+    boton1.style.display = "none";
+    boton2.style.display = "block";
+  }
+}
+
 
 function obtenerCarrito() {
   var carritoGuardado = localStorage.getItem('carritoDeSemillas');
@@ -27,10 +57,10 @@ function guardarCarrito(carrito) {
   localStorage.setItem('carritoDeSemillas', JSON.stringify(carrito));
 }
 
-function cambiarColor(idBoton) {
-  var boton = document.getElementById(idBoton);
-  boton.style.backgroundColor = "green";
-}
+// function cambiarColor(idBoton) {
+//   var boton = document.getElementById(idBoton);
+//   boton.style.backgroundColor = "green";
+// }
 
 function enviarCarrito() {
   var total = 0;
