@@ -1,37 +1,45 @@
 // Esta clase contiene funciones que ayudan a la realizacion del pedido
 
 
-var carritoDeSemillas = obtenerCarrito();
+var carritoDeCompras = obtenerCarrito();
 var currentValue = 1; // Variable global
 
+///////////////////////////////// A C C I O N E S//////////////////////////////////////////
+
+// Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
 function guardarValorYCantidad(valorBoton) {
   var quantityInput = event.target.closest('.down-content').querySelector('.quantity-input');
   var quantityValue = parseInt(quantityInput.value);
-  var item = { boton: valorBoton, quantity: quantityValue };
+  var arrayCarrito = { boton: valorBoton, quantity: quantityValue };
 
-  carritoDeSemillas.push(item);
-  guardarCarrito(carritoDeSemillas);
+  carritoDeCompras.push(arrayCarrito);
+  guardarCarrito(carritoDeCompras);
   console.log("Valor del botón: " + valorBoton + ", cantidad de packs: " + quantityValue);
 }
 
-function quitarDelPedido(valorBoton) {
+
+// Funcion que quita el valor y cantidad del array, del boton cual fue seleccionado para ejectuar esta accion
+function quitarValorYCantidad(valorBoton) {
   var index = -1;
-  for (var i = 0; i < carritoDeSemillas.length; i++) {
-    var item = carritoDeSemillas[i];
-    if (item.boton === valorBoton) {
+  for (var i = 0; i < carritoDeCompras.length; i++) {
+    var arrayCarrito = carritoDeCompras[i];
+    if (arrayCarrito.boton === valorBoton) {
       index = i;
       break;
     }
   }
   if (index > -1) {
-    carritoDeSemillas.splice(index, 1); // Elimina el item del carrito
-    guardarCarrito(carritoDeSemillas);
+    carritoDeCompras.splice(index, 1); // Elimina el item del carrito
+    guardarCarrito(carritoDeCompras);
     var quantityInput = document.querySelector('.down-content .quantity-input');
     quantityInput.value = 1; // Resetea la cantidad del input a 1
     console.log("Valor del botón: " + valorBoton + " eliminado del carrito");
   }
 }
-function alternarBotones(idBoton1, idBoton2 ) {
+
+
+// Funcione que realice una viceversa de acciones entre los botones de quitar o agregar pedido, cuando una se muestra la otra se esconde
+function alternarBotones(idBoton1, idBoton2) {
   var boton1 = document.getElementById(idBoton1);
   var boton2 = document.getElementById(idBoton2);
   
@@ -45,31 +53,44 @@ function alternarBotones(idBoton1, idBoton2 ) {
 }
 
 
+//////////////////////////// A L M A C E N A D O /////////////////////////////////
+
+// Funcion para obtener el carrito y almacenarlo
 function obtenerCarrito() {
-  var carritoGuardado = localStorage.getItem('carritoDeSemillas');
+  var carritoGuardado = localStorage.getItem('carritoDeCompras');
   if (carritoGuardado) {
     return JSON.parse(carritoGuardado);
   }
   return [];
 }
 
+
+// Funcion que guarda el carrito en una memoria local para no perderlo al moverse de pagina
 function guardarCarrito(carrito) {
-  localStorage.setItem('carritoDeSemillas', JSON.stringify(carrito));
+  localStorage.setItem('carritoDeCompras', JSON.stringify(carrito));
 }
+
+///////////////////////////////// A L M A C E N A D O /////////////////////////////////
 
 // function cambiarColor(idBoton) {
 //   var boton = document.getElementById(idBoton);
 //   boton.style.backgroundColor = "green";
 // }
 
+
+
+
+//////////////////////////////// E N V I O  ////////////////////////////////
+
+// Funcion que envia un mensaje a whatsapp con el pedido realizado y su cantidad
 function enviarCarrito() {
   var total = 0;
-  var mensaje = "Mi pedido de semillas es: ";
-  for (var i = 0; i < carritoDeSemillas.length; i++) {
-    var item = carritoDeSemillas[i];
-    var subtotal = item.quantity * parseInt(item.boton);
-    total += subtotal;
-    mensaje += item.boton + " x " + item.quantity + ", ";
+  var mensaje = "Mi pedido es: ";
+  for (var i = 0; i < carritoDeCompras.length; i++) {
+    var arrayCarrito = carritoDeCompras[i];
+    // var subtotal = arrayCarrito.quantity * parseInt(arrayCarrito.boton);
+    // total += subtotal;
+    mensaje += arrayCarrito.boton + " x " + arrayCarrito.quantity + ", ";
   }
   mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
   mensaje = mensaje.replace(/ /g, "%20");
@@ -78,17 +99,29 @@ function enviarCarrito() {
   window.open(enlace);
   resetearCarritoYRecargarPagina()
 }
+//////////////////////////////// E N V I O  ////////////////////////////////
 
+
+
+//////////////////////////////// R E D I R E C C I O N  ////////////////////////////////
+
+// Funcion que resetea el carrito de compras al tocan el boton realizar pedido y recarga la pagina
 function resetearCarritoYRecargarPagina() {
-  carritoDeSemillas = []; // Limpiar carrito
-  guardarCarrito(carritoDeSemillas); // Guardar carrito vacío en localStorage
-  location.reload(); // Recargar página
+  carritoDeCompras = []; // Limpiar carrito
+  guardarCarrito(carritoDeCompras); // Guardar carrito vacío en localStorage
+  // location.reload(); // Recargar página
 }
 
+// Funcion que redirige a una pagina
 function irAPagina(pagina) {
   window.location.href = pagina;
 }
 
+//////////////////////////////// R E D I R E C C I O N  ////////////////////////////////
+
+
+
+// Funciones para el quantity
 window.addEventListener('load', function() {
   // Obtener todos los elementos con la clase "quantity-input"
   var quantityInputs = document.querySelectorAll(".quantity-input");
