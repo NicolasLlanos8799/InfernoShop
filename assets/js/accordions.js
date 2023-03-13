@@ -2223,7 +2223,7 @@ var menu = $.widget( "ui.menu", {
 			focus: function( event, keepActiveItem ) {
 				// If there's already an active item, keep it active
 				// If not, activate the first item
-				var item = this.active || this.element.find( this.options.items ).eq( 0 );
+				var arrayCarrito = this.active || this.element.find( this.options.items ).eq( 0 );
 
 				if ( !keepActiveItem ) {
 					this.focus( event, item );
@@ -2415,7 +2415,7 @@ var menu = $.widget( "ui.menu", {
 
 		// Initialize menu-items containing spaces and/or dashes only as dividers
 		items.not( ".ui-menu-item" ).each(function() {
-			var item = $( this );
+			var arrayCarrito = $( this );
 			if ( that._isDivider( item ) ) {
 				item.addClass( "ui-widget-content ui-menu-divider" );
 			}
@@ -2671,7 +2671,7 @@ var menu = $.widget( "ui.menu", {
 	},
 
 	nextPage: function( event ) {
-		var item, base, height;
+		var arrayCarrito, base, height;
 
 		if ( !this.active ) {
 			this.next( event );
@@ -2696,7 +2696,7 @@ var menu = $.widget( "ui.menu", {
 	},
 
 	previousPage: function( event ) {
-		var item, base, height;
+		var arrayCarrito, base, height;
 		if ( !this.active ) {
 			this.next( event );
 			return;
@@ -3009,7 +3009,7 @@ $.widget( "ui.autocomplete", {
 				}
 			},
 			menuselect: function( event, ui ) {
-				var item = ui.item.data( "ui-autocomplete-item" ),
+				var arrayCarrito = ui.item.data( "ui-autocomplete-item" ),
 					previous = this.previous;
 
 				// only trigger when focus was lost (click on menu)
@@ -12333,7 +12333,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 					that._select( ui.item.data( "ui-selectmenu-item" ), event );
 				},
 				focus: function( event, ui ) {
-					var item = ui.item.data( "ui-selectmenu-item" );
+					var arrayCarrito = ui.item.data( "ui-selectmenu-item" );
 
 					// Prevent inital focus from firing and check if its a newly focused item
 					if ( that.focusIndex != null && item.index !== that.focusIndex ) {
@@ -12380,7 +12380,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	_refreshMenu: function() {
 		this.menu.empty();
 
-		var item,
+		var arrayCarrito,
 			options = this.element.find( "option" );
 
 		if ( !options.length ) {
@@ -12500,7 +12500,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	},
 
 	_move: function( direction, event ) {
-		var item, next,
+		var arrayCarrito, next,
 			filter = ".ui-menu-item";
 
 		if ( this.isOpen ) {
@@ -12647,7 +12647,7 @@ var selectmenu = $.widget( "ui.selectmenu", {
 	},
 
 	_selectFocusedItem: function( event ) {
-		var item = this.menuItems.eq( this.focusIndex );
+		var arrayCarrito = this.menuItems.eq( this.focusIndex );
 		if ( !item.hasClass( "ui-state-disabled" ) ) {
 			this._select( item.data( "ui-selectmenu-item" ), event );
 		}
@@ -13986,7 +13986,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	serialize: function(o) {
 
-		var items = this._getItemsAsjQuery(o && o.connected),
+		var arrayCarritos = this._getItemsAsjQuery(o && o.connected),
 			str = [];
 		o = o || {};
 
@@ -14007,7 +14007,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 
 	toArray: function(o) {
 
-		var items = this._getItemsAsjQuery(o && o.connected),
+		var arrayCarritos = this._getItemsAsjQuery(o && o.connected),
 			ret = [];
 
 		o = o || {};
