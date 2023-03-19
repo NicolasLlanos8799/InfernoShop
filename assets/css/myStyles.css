@@ -12,4 +12,33 @@
   .navBarRight {
     justify-content: flex-end;
   }
+  .cart-icon img {
+    width: 50px; /* Cambiar el tamaño a 50px */
+  }
+
+  .cart-icon {
+    float: left;
+    margin-left: 820px; /* ajusta el margen según tu diseño */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 992px) { /* ajusta el ancho máximo según tu diseño */
+    .cart-icon {
+      float: none;
+      margin: 0;
+      order: 2; /* cambia el orden de aparición */
+      margin-left: 240px;
+    }
+  
+    .navbar-nav {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  
   
