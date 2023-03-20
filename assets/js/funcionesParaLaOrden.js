@@ -3,8 +3,21 @@
 
 var carritoDeCompras = obtenerCarrito();
 var currentValue = 1; // Variable global
+var longitudCarritoDeCompras = carritoDeCompras.length;
 
 ///////////////////////////////// A C C I O N E S//////////////////////////////////////////
+
+
+function mostrarLongitudArray() {
+
+   // Actualiza el contenido del elemento con el id "longitudCarrito"
+   var elementoCarrito = document.getElementById("longitudCarrito");
+   elementoCarrito.textContent = longitudCarritoDeCompras;
+ 
+   // Imprime en la consola la cantidad del carrito
+   console.log("Cantidad del carrito: " + longitudCarritoDeCompras);
+}
+
 
 // Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
 function guardarValorYCantidad(valorBoton) {

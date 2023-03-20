@@ -42,7 +42,7 @@ https://templatemo.com/tm-546-sixteen-clothing
 
   </head>
 
-  <body>
+  <body onload="mostrarLongitudArray()">
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
@@ -66,7 +66,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a onclick="obtenerCarrito();enviarCarrito()">
                   <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
                 </a>
-                <span class="cart-count"></span>
+                <span id="longitudCarrito" class="cart-count"></span>
               </div>
               <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
