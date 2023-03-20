@@ -109,7 +109,7 @@ function enviarCarrito() {
 function resetearCarritoYRecargarPagina() {
   carritoDeCompras = []; // Limpiar carrito
   guardarCarrito(carritoDeCompras); // Guardar carrito vacío en localStorage
-  // location.reload(); // Recargar página
+ location.reload(); // Recargar página
 }
 
 // Funcion que redirige a una pagina
