@@ -22,6 +22,7 @@
 
     <!-- Archivos locales -->
     <script src="assets/js/funcionesParaLaWeb.js"></script>
+    <script src="assets/js/funcionesParaLaOrden.js"></script>
     <link rel="stylesheet" href="assets/css/myStyles.css">
     <!-- Archivos locales -->
 <!--
@@ -39,7 +40,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
-  <body>
+  <body onload="mostrarLongitudArray()">
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
@@ -63,7 +64,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a onclick="obtenerCarrito();enviarCarrito()">
                   <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
                 </a>
-                <span class="cart-count"></span>
+                <span id="longitudCarrito" class="cart-count"></span>
               </div>
               <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
