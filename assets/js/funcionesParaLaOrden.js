@@ -50,19 +50,19 @@ function quitarValorYCantidad(valorBoton) {
 }
 
 
-// Funcione que realice una viceversa de acciones entre los botones de quitar o agregar pedido, cuando una se muestra la otra se esconde
-function alternarBotones(idBoton1, idBoton2) {
-  var boton1 = document.getElementById(idBoton1);
-  var boton2 = document.getElementById(idBoton2);
+// // Funcione que realice una viceversa de acciones entre los botones de quitar o agregar pedido, cuando una se muestra la otra se esconde
+// function alternarBotones(idBoton1, idBoton2) {
+//   var boton1 = document.getElementById(idBoton1);
+//   var boton2 = document.getElementById(idBoton2);
   
-  if (boton1.style.display === "none") {
-    boton1.style.display = "block";
-    boton2.style.display = "none";
-  } else {
-    boton1.style.display = "none";
-    boton2.style.display = "block";
-  }
-}
+//   if (boton1.style.display === "none") {
+//     boton1.style.display = "block";
+//     boton2.style.display = "none";
+//   } else {
+//     boton1.style.display = "none";
+//     boton2.style.display = "block";
+//   }
+// }
 
 
 //////////////////////////// A L M A C E N A D O /////////////////////////////////
