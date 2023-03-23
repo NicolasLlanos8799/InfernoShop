@@ -9,7 +9,6 @@ var longitudCarritoDeCompras = carritoDeCompras.length;
 
 
 function mostrarLongitudArray() {
-
    // Actualiza el contenido del elemento con el id "longitudCarrito"
    var elementoCarrito = document.getElementById("longitudCarrito");
    elementoCarrito.textContent = longitudCarritoDeCompras;
@@ -123,6 +122,11 @@ function resetearCarritoYRecargarPagina() {
   carritoDeCompras = []; // Limpiar carrito
   guardarCarrito(carritoDeCompras); // Guardar carrito vacío en localStorage
  location.reload(); // Recargar página
+}
+
+function recargarPaginaYMostrarCantidadCarrito() {
+  location.reload()
+  mostrarLongitudArray()
 }
 
 // Funcion que redirige a una pagina
