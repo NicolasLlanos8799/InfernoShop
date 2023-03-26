@@ -8,7 +8,7 @@ var longitudCarritoDeCompras = carritoDeCompras.length;
 ///////////////////////////////// A C C I O N E S//////////////////////////////////////////
 
 
-function mostrarLongitudArray() {
+function mostrarLongitudArrayCarrito() {
    // Actualiza el contenido del elemento con el id "longitudCarrito"
    var elementoCarrito = document.getElementById("longitudCarrito");
    elementoCarrito.textContent = longitudCarritoDeCompras;
@@ -126,7 +126,7 @@ function resetearCarritoYRecargarPagina() {
 
 function recargarPaginaYMostrarCantidadCarrito() {
   location.reload()
-  mostrarLongitudArray()
+  mostrarLongitudArrayCarrito()
 }
 
 // Funcion que redirige a una pagina
