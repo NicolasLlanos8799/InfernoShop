@@ -54,6 +54,17 @@
     justify-content: center;
     align-items: center;
   }
+
+
+ /* Estilo para la transicion del carrousel  */
+ .carousel-item {
+    opacity: 1;
+    transition: opacity -10s ease-in-out;
+  }
+  .carousel-item.active {
+    opacity: 1;
+    transition: opacity -10s ease-in-out;
+  }
   
   
   
