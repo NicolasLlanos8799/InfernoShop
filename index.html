@@ -61,17 +61,21 @@ https://templatemo.com/tm-546-sixteen-clothing
                   <span class="navbar-toggler-icon"></span>
               </button>
               <div class="cart-icon">
-                <a onclick="abrirVentana()">
+                <a onclick="mostrarLosItemsParaElPopUp();document.getElementById('miPopUp').style.display='block'">
                   <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
                 </a>
                 <span id="longitudCarrito" class="cart-count"></span>
               </div>
-              <div id="popup" style="display:none;">
-                <div id="pedido-lista"></div>
-                <button onclick="realizarPedido()">Realizar pedido</button>
-                <button onclick="ocultarPopup()">Volver</button>
+              <div id="miPopUp">
+                <div id="miPopUpContenido">
+                  <h2>Tu pedido:</h2>
+                  <ul id="itemsDelCarrito">
+                    
+                  </ul>
+                  <button onclick="document.getElementById('miPopUp').style.display='none'">Volver</button>
+                  <button onclick="realizarPedido()">Realizar pedido</button>
+                </div>
               </div>
-              
               <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
@@ -219,12 +223,7 @@ https://templatemo.com/tm-546-sixteen-clothing
   });
 </script>
 
-<script>
-  function abrirVentana() {
-    // Abrir una nueva ventana con la URL especificada
-    window.open("http://www.google.com", "MiVentanaEmergente", "width=400,height=300");
-  }
-</script>
+
 
   </body>
 
