@@ -65,6 +65,41 @@
     opacity: 1;
     transition: opacity -10s ease-in-out;
   }
+
   
-  
+
+   /* POP UP */
+
+.modal-content {
+  position: relative;
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .modal-content {
+    position: relative;
+    left: 400px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+   
+}
   

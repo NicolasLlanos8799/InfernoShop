@@ -8,7 +8,7 @@ var longitudCarritoDeCompras = carritoDeCompras.length;
 ///////////////////////////////// A C C I O N E S//////////////////////////////////////////
 
 
-function mostrarLongitudArray() {
+function mostrarLongitudArrayCarrito() {
    // Actualiza el contenido del elemento con el id "longitudCarrito"
    var elementoCarrito = document.getElementById("longitudCarrito");
    elementoCarrito.textContent = longitudCarritoDeCompras;
@@ -16,6 +16,30 @@ function mostrarLongitudArray() {
    // Imprime en la consola la cantidad del carrito
    console.log("Cantidad del carrito: " + longitudCarritoDeCompras);
 }
+
+function mostrarLosItemsParaElPopUp() {
+  var mensaje = "";
+  for (var i = 0; i < carritoDeCompras.length; i++) {
+    var arrayCarrito = carritoDeCompras[i];
+    // var subtotal = arrayCarrito.quantity * parseInt(arrayCarrito.boton);
+    // total += subtotal;
+    mensaje += arrayCarrito.boton + " x " + arrayCarrito.quantity + ", ";
+  }
+  mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
+  var itemsDelCarrito = document.getElementById("itemsDelCarrito");
+  itemsDelCarrito.textContent = mensaje;
+  window.onload = function() {
+  var miPopUp = document.getElementById('miPopUp');
+  var miPopUpContenido = document.getElementById('miPopUpContenido');
+
+  miPopUp.style.display = 'block';
+  miPopUpContenido.style.top = (window.innerHeight / 2 - miPopUpContenido.offsetHeight / 2) + 'px';
+  miPopUpContenido.style.left = (window.innerWidth / 2 - miPopUpContenido.offsetWidth / 2) + 'px';
+};
+
+  
+}
+
 
 
 // Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
@@ -84,18 +108,12 @@ function guardarCarrito(carrito) {
 
 ///////////////////////////////// A L M A C E N A D O /////////////////////////////////
 
-// function cambiarColor(idBoton) {
-//   var boton = document.getElementById(idBoton);
-//   boton.style.backgroundColor = "green";
-// }
-
-
 
 
 //////////////////////////////// E N V I O  ////////////////////////////////
 
 // Funcion que envia un mensaje a whatsapp con el pedido realizado y su cantidad
-function enviarCarrito() {
+function realizarPedido() {
   var total = 0;
   var mensaje = "Mi pedido es: ";
   for (var i = 0; i < carritoDeCompras.length; i++) {
@@ -126,7 +144,7 @@ function resetearCarritoYRecargarPagina() {
 
 function recargarPaginaYMostrarCantidadCarrito() {
   location.reload()
-  mostrarLongitudArray()
+  mostrarLongitudArrayCarrito()
 }
 
 // Funcion que redirige a una pagina
