@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
 
-    <!-- LO QUE HACE QUE FUNCIONE EL ACORDEON -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- LO QUE HACE QUE FUNCIONE EL ACORDEON -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-    <title>Inferno Shop</title>
+  <title>Inferno Shop</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Archivos locales -->
-    <script src="assets/js/funcionesParaLaWeb.js"></script>
-    <script src="assets/js/funcionesParaLaOrden.js"></script>
-    <link rel="stylesheet" href="assets/css/myStyles.css">
-    <!-- Archivos locales -->
-<!--
+  <!-- Archivos locales -->
+  <script src="assets/js/funcionesParaLaWeb.js"></script>
+  <script src="assets/js/funcionesParaLaOrden.js"></script>
+  <link rel="stylesheet" href="assets/css/myStyles.css">
+  <!-- Archivos locales -->
+  <!--
 
 TemplateMo 546 Sixteen Clothing
 
@@ -33,204 +34,200 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 -->
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-  <body onload="mostrarLongitudArrayCarrito()">
+<body onload="mostrarLongitudArrayCarrito()">
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Header -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <h2>Inferno<em> Shop</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="cart-icon">
+          <a data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrarLosItemsParaElPopUp();">
+            <img src="assets/images/carrito.jpg" alt="Carrito de compras">
+          </a>
+          <span id="longitudCarrito" class="cart-count"></span>
         </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-          <div class="container">
-              <a class="navbar-brand" href="index.html"><h2>Inferno<em> Shop</em></h2></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="cart-icon">
-                <a data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrarLosItemsParaElPopUp();">
-                  <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
-                </a>
-                <span id="longitudCarrito" class="cart-count"></span>
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p id="itemsDelCarrito"></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
-                    </div>
-                  </div>
-                </div>
+              <div class="modal-body">
+                <p id="itemsDelCarrito"></p>
               </div>
-              <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" href="#Productos">Productos</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#Contacto">Contacto</a>
-                      </li>
-                  </ul>
+              <div class="modal-footer">
+                <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
               </div>
+            </div>
           </div>
-      </nav>
+        </div>
+        <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#Productos">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-  
-  
-    <!-- Header -->
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-          <div class="text-content">
-            <!-- <h4>Grow Shop</h4> -->
-            <h2>Inferno Shop</h2>
-          </div>
+
+  <!-- Header -->
+
+  <!-- Page Content -->
+  <!-- Banner Starts Here -->
+  <div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+      <div class="banner-item-01">
+        <div class="text-content">
+          <!-- <h4>Grow Shop</h4> -->
+          <h2>Inferno Shop</h2>
         </div>
       </div>
     </div>
-    <!-- Banner Ends Here -->
+  </div>
+  <!-- Banner Ends Here -->
 
-    <div class="latest-products" id="Productos">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Nuestros productos</h2>
+  <div class="latest-products" id="Productos">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Nuestros productos</h2>
+          </div>
+        </div>
+
+        <!-------Carta de semillas----------------------------->
+        <div class="col-md-4">
+          <div class="product-item">
+            <a href="semillas.html"><img
+                src="https://www.cannabislandia.com/blog/wp-content/uploads/2017/11/comprar-semillas-de-marihuana-3-e1510162543387.jpg"
+                alt=""></a>
+            <div class="down-content">
+              <a href="semillas.html">
+                <h4>Semillas</h4>
+              </a>
+              <!-- <p>Escoger las semillas adecuadas es fundamental para un cultivo exitoso. Asegúrate de elegir semillas con las características específicas que buscas en tu cultivo para obtener los mejores resultados.</p> -->
             </div>
           </div>
-         
-          <!-------Carta de sustrato----------------------------->
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="semillas.html"><img src="https://www.cannabislandia.com/blog/wp-content/uploads/2017/11/comprar-semillas-de-marihuana-3-e1510162543387.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="semillas.html"><h4>Semillas</h4></a>
-                <!-- <p>Escoger las semillas adecuadas es fundamental para un cultivo exitoso. Asegúrate de elegir semillas con las características específicas que buscas en tu cultivo para obtener los mejores resultados.</p> -->
-               </div>
-            </div>
-          </div>
+        </div>
 
-           <!-------------CARTA LUCES------------------->
-           <div class="col-md-4">
-            <div class="product-item">
-              <a href="aceites.html"><img src="https://media.istockphoto.com/id/1257858937/es/foto/aceite-cbd-aceite-de-cannabis-sobre-fondo-amarillo.jpg?s=612x612&w=0&k=20&c=mG8F3-p3g4aorbdQxq4_nFddPVAbjXVDsevdZKTALJI=" alt=""></a>
-              <div class="down-content">
-                <ah ref="aceites.html"><h4>Aceites</h4></a>
+        <!-------------CARTA Aceites------------------->
+        <div class="col-md-4">
+          <div class="product-item">
+            <a href="aceites.html"><img
+                src="https://media.istockphoto.com/id/1257858937/es/foto/aceite-cbd-aceite-de-cannabis-sobre-fondo-amarillo.jpg?s=612x612&w=0&k=20&c=mG8F3-p3g4aorbdQxq4_nFddPVAbjXVDsevdZKTALJI="
+                alt=""></a>
+            <div class="down-content">
+              <ah ref="aceites.html">
+                <h4>Aceites</h4></a>
                 <!-- <p>Encontra la mejor variedad de iluminacion y calidad para tu espacio de cultivo.</p> -->
-              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
-    
-    
-  
-    <footer>
-      <div class="call-to-action" id="Contacto">
-        <div class="container">
-          <div style="margin-left:15px" class="row">
-            <div class="col-md-12">
-              <div class="inner-content">
-                <div class="row">
-                  <div class="col-md-14">
-                    <h3 style="text-align: center;margin-top: auto;">Contactanos</h3>
-                    <h4 style="margin-top: 15px;">Para comunicarte con nosotros te dejamos nuestro instagram y un link directo a nuestro WhatsApp.</h4>  
-                 </div>
-                 
-                 <div class="col-md-10">
-                   <td>
-                      <tr>
-                        <br>
-                        <!-- <a href="https://www.instagram.com/rocka_ndgrow/" class="fa fa-instagram"></a>
-                        <a href="https://api.whatsapp.com/send?phone=543424283098&text=Hola Rock and Grow%20necesito%20asesoramiento%20" class="fa fa-whatsapp"></a> -->
-                      </tr>
-                    </td>
-                 </div>
-                </div>
-              </div>
-            </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="call-to-action" id="Contacto">
+      <div class="inner-content">
+        <div class="row justify-content-center"> <!-- Agregamos la clase justify-content-center -->
+          <div style="margin-left: 30px;" class="col-md-14">
+            <h3 style="text-align: center;margin-top: auto;">Contactanos</h3>
+            <h4 style="margin-top: 15px;">Para comunicarte con nosotros te dejamos nuestro instagram y un link directo a nuestro WhatsApp.</h4>
+          </div>
+          <div class="col-md-10">
+            <a href="https://www.instagram.com/inferno_growshop/" class="fa fa-instagram"></a>
+            <a href="https://api.whatsapp.com/send?phone=543425087441&text=Hola Inferno Grow Shop%20necesito%20asesoramiento%20" class="fa fa-whatsapp"></a>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p style="text-align: center;">Copyright &copy; 2023 NL Developments.
-            </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <p style="text-align: center;">Copyright &copy; 2023 NL Developments.
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+  <!-- Additional Scripts -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/accordions.js"></script>
 
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
       }
-    </script>
+    }
+  </script>
 
-<script>
-  // Detectar clic en el enlace de Productos
-  document.querySelector('a[href="#productos"]').addEventListener('click', function(e) {
-    // Prevenir el comportamiento predeterminado del enlace
-    e.preventDefault();
-    // Obtener la posición de la sección de Nuestros productos
-    const productosSection = document.getElementById('productos');
-    const productosSectionPos = productosSection.getBoundingClientRect().top + window.pageYOffset;
-    // Realizar el scroll a la posición de la sección de Nuestros productos
-    window.scrollTo({
-      top: productosSectionPos,
-      behavior: 'smooth'
+  <script>
+    // Detectar clic en el enlace de Productos
+    document.querySelector('a[href="#productos"]').addEventListener('click', function (e) {
+      // Prevenir el comportamiento predeterminado del enlace
+      e.preventDefault();
+      // Obtener la posición de la sección de Nuestros productos
+      const productosSection = document.getElementById('productos');
+      const productosSectionPos = productosSection.getBoundingClientRect().top + window.pageYOffset;
+      // Realizar el scroll a la posición de la sección de Nuestros productos
+      window.scrollTo({
+        top: productosSectionPos,
+        behavior: 'smooth'
+      });
     });
-  });
-</script>
+  </script>
 
 
 
-  </body>
+</body>
 
 </html>
