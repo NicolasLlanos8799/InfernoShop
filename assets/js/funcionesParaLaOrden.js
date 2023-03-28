@@ -113,7 +113,7 @@ function guardarCarrito(carrito) {
 //////////////////////////////// E N V I O  ////////////////////////////////
 
 // Funcion que envia un mensaje a whatsapp con el pedido realizado y su cantidad
-function enviarCarrito() {
+function realizarPedido() {
   var total = 0;
   var mensaje = "Mi pedido es: ";
   for (var i = 0; i < carritoDeCompras.length; i++) {

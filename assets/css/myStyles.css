@@ -69,36 +69,37 @@
   
 
    /* POP UP */
- #miPopUp {
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
 
-#miPopUpContenido {
-  background-color: white;
-  padding: 20px;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
+.modal-content {
+  position: relative;
+  display: flex;
+  top: 80px;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
 }
 
 @media only screen and (min-width: 768px) {
-  #miPopUpContenido {
-    max-width: 50%;
-    max-height: 80%;
-  }
-}
 
-@media only screen and (min-width: 992px) {
-  #miPopUpContenido {
-    max-width: 30%;
-    max-height: 70%;
-  }
+  .modal-content {
+    position: relative;
+    left: 400px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+   
 }
   

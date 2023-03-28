@@ -63,10 +63,26 @@ https://templatemo.com/tm-546-sixteen-clothing
                   <span class="navbar-toggler-icon"></span>
               </button>
               <div class="cart-icon">
-                <a onclick="obtenerCarrito();enviarCarrito()">
+                <a data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrarLosItemsParaElPopUp();">
                   <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
                 </a>
                 <span id="longitudCarrito" class="cart-count"></span>
+              </div>
+              <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="itemsDelCarrito"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
@@ -534,7 +550,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                 </div>
 
-                <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-primary" onclick="obtenerCarrito();enviarCarrito()">Realizar pedido</button>
+                <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-primary" onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
                 <button style="width:100%;" class="alineacionesButton btn btn-primary" onclick="irAPagina('aceites.html')">Ir a aceites y seguir comprando</button>
             </div>
           </div>
