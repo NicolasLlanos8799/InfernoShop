@@ -28,18 +28,7 @@ function mostrarLosItemsParaElPopUp() {
   mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
   itemsDelCarrito.textContent = mensaje;
-  window.onload = function() {
-  var miPopUp = document.getElementById('miPopUp');
-  var miPopUpContenido = document.getElementById('miPopUpContenido');
-
-  miPopUp.style.display = 'block';
-  miPopUpContenido.style.top = (window.innerHeight / 2 - miPopUpContenido.offsetHeight / 2) + 'px';
-  miPopUpContenido.style.left = (window.innerWidth / 2 - miPopUpContenido.offsetWidth / 2) + 'px';
 };
-
-  
-}
-
 
 
 // Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
@@ -113,22 +102,40 @@ function guardarCarrito(carrito) {
 //////////////////////////////// E N V I O  ////////////////////////////////
 
 // Funcion que envia un mensaje a whatsapp con el pedido realizado y su cantidad
+// Tambien obtiene el value de la seccion de cada boton, para luego replampazarlo por vacio, para poder enviar el mensaje por wpp separando por seeccion
 function realizarPedido() {
   var total = 0;
-  var mensaje = "Mi pedido es: ";
+  var mensajeSemillas = "Mi pedido de semillas es: ";
+  var mensajeAceite = "Mi pedido de aceite es: ";
+  
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
-    // var subtotal = arrayCarrito.quantity * parseInt(arrayCarrito.boton);
+    var boton = arrayCarrito.boton;
+    var quantity = arrayCarrito.quantity;
+    // var subtotal = quantity * parseInt(boton.slice(boton.indexOf("$") + 1));
     // total += subtotal;
-    mensaje += arrayCarrito.boton + " x " + arrayCarrito.quantity + ", ";
+
+    if (boton.includes("semillas")) {
+      mensajeSemillas += boton.replace(",semillas", "") + " x " + quantity + ", ";
+    } else if (boton.includes("aceites")) {
+      mensajeAceite += boton.replace(",aceites", "") + " x " + quantity + ", ";
+    }
   }
-  mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
-  mensaje = mensaje.replace(/ /g, "%20");
-  mensaje += "%0A"
+  
+  mensajeSemillas = mensajeSemillas.slice(0, -2); // Eliminar la última coma y espacio
+  mensajeSemillas = mensajeSemillas.replace(/ /g, "%20");
+  mensajeSemillas += "%0A"
+  
+  mensajeAceite = mensajeAceite.slice(0, -2); // Eliminar la última coma y espacio
+  mensajeAceite = mensajeAceite.replace(/ /g, "%20");
+  mensajeAceite += "%0A"
+  
+  var mensaje = mensajeSemillas + mensajeAceite;
   var enlace = "https://wa.me/543425087441/?text=" + mensaje;
   window.open(enlace);
   resetearCarritoYRecargarPagina()
 }
+
 //////////////////////////////// E N V I O  ////////////////////////////////
 
 
