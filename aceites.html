@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- LO QUE HACE QUE FUNCIONE EL ACORDEON -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- LO QUE HACE QUE FUNCIONE EL ACORDEON -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <title>Aceites</title>
-    
-     <!-- Archivos CSS local -->
-     <link rel="stylesheet" href="assets/css/quantity.css">
-     <link rel="stylesheet" href="assets/css/myStyles.css">
+  <title>Aceites</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <!-- LLAMANDO JAVA SCRIPT FUNCIONES ORDER -->
-      <script src="assets/js/funcionesParaLaOrden.js"></script>
-<!--
+  <!-- Archivos CSS local -->
+  <link rel="stylesheet" href="assets/css/quantity.css">
+  <link rel="stylesheet" href="assets/css/myStyles.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- LLAMANDO JAVA SCRIPT FUNCIONES ORDER -->
+  <script src="assets/js/funcionesParaLaOrden.js"></script>
+  <!--
 
 TemplateMo 546 Sixteen Clothing
 
@@ -32,222 +33,243 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 -->
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
 
-  </head>
+</head>
 
-  <body onload="mostrarLongitudArrayCarrito()">
+<body onload="mostrarLongitudArrayCarrito()">
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- preloads -->
+  <link rel="preload" href="assets/images/aceite.jpeg" as="image">
+  <link rel="preload" href="https://www.latercera.com/resizer/wEIoETCxU95vEY6palzG_ji07HU=/arc-anglerfish-arc2-prod-copesa/public/7E7CSKWYQZH6HBDYQ6PJDLCBEE.jpg" as="image">
+
+
+  <!-- Header -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <h2>Inferno<em> Shop</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="cart-icon">
+          <a data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrarLosItemsParaElPopUp();">
+            <img src="assets/images/carrito.jpg" alt="Carrito de compras">
+          </a>
+          <span id="longitudCarrito" class="cart-count"></span>
         </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-          <div class="container">
-              <a class="navbar-brand" href="index.html"><h2>Inferno<em> Shop</em></h2></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="cart-icon">
-                <a data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrarLosItemsParaElPopUp();">
-                  <img src="assets/images/carrito.jpg"  alt="Carrito de compras">
-                </a>
-                <span id="longitudCarrito" class="cart-count"></span>
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p id="itemsDelCarrito"></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
-                    </div>
-                  </div>
-                </div>
+              <div class="modal-body">
+                <p id="itemsDelCarrito"></p>
               </div>
-              <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" href="index.html">Inicio</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="index.html#Productos">Productos</a>
-                      </li>
-                  </ul>
+              <div class="modal-footer">
+                <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
               </div>
+            </div>
           </div>
-      </nav>
+        </div>
+        <div class="navBarRight collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#Productos">Productos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <!-- Page Content -->
-    <div class="page-heading aceites-heading header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="text-content">
-              <!-- <h4>new arrivals</h4> -->
-              <h2>Aceites</h2>
-            </div>
+  <!-- Page Content -->
+  <div class="page-heading aceites-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content">
+            <!-- <h4>new arrivals</h4> -->
+            <h2>Aceites</h2>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-     
-    <div class="products">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="filters">
-              <ul>
-                  <li class="active" data-filter="*">Todos los productos</li>
-              </ul>
-            </div>
+
+  <div class="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="filters">
+            <ul>
+              <li class="active" data-filter="*">Todos los productos</li>
+            </ul>
           </div>
-          <h2 class="h2Marcas">Aceites</h2>
-          <div class="col-md-12">
-            <div class="filters-content">
-                <div class="row grid">
-                    <div class="col-lg-3 col-md-3 all des">
-                      <div class="product-item">
-                        <div id="carousel-image-1" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100" alt="Imagen 1">
-                            </div>
-                            <div class="carousel-item">
-                              <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100" alt="Imagen 2">
-                            </div>
-                            <div class="carousel-item">
-                              <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100" alt="Imagen en blanco">
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-1" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-1" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                        
-                        <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                        <div class="down-content">
-                          <div class="alineacionesButton quantity">
-                            <button class="decrease-button">-</button>
-                            <input type="number" value="1" min="1" max="10" class="quantity-input">
-                            <button class="increase-button">+</button>
-                          </div>
-                            <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
-                          <button id="boton-aceite-100ml-add" value="Aceite 100ml,aceites" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value);recargarPaginaYMostrarCantidadCarrito()">Agregar pedido</button>
-                          <!-- <button id="boton-aceite-100ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-100ml-quit','boton-aceite-100ml-add')" style="display: none;">Quitar pedido</button> -->
-                        </div>
-                        <h6 class="alineacionesH6">Desde $3000 por pack</h6>
-                        <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+        </div>
+        <h2 class="h2Marcas">Aceites</h2>
+        <div class="col-md-12">
+          <div class="filters-content">
+            <div class="row grid">
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <div id="carousel-image-1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
+                          alt="Imagen 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
+                          alt="Imagen 2">
                       </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-3 all des">
-                      <div class="product-item">
-                        <div id="carrousel-image-2" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100" alt="Imagen 1">
-                            </div>
-                            <div class="carousel-item">
-                              <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100" alt="Imagen 2">
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-image-2" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carrousel-image-2" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                       <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                       <div class="down-content">
-                        <div class="alineacionesButton quantity">
-                          <button class="decrease-button">-</button>
-                          <input type="number" value="1" min="1" max="10" class="quantity-input">
-                          <button class="increase-button">+</button>
-                        </div>
-                        <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
-                        <button id="boton-aceite-10ml-add" value="Aceite 100ml,aceites" class="alineacionesButton btn btn-primary" onclick="guardarValorYCantidad(this.value);recargarPaginaYMostrarCantidadCarrito()">Agregar pedido</button>
-                        <!-- <button id="boton-aceite-10ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-10ml-quit','boton-aceite-10ml-add')" style="display: none;">Quitar pedido</button> -->
-                      </div>
-                      <h6 class="alineacionesH6">Desde $3000 por pack</h6>
-                      <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-1"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-1"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                   </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-aceite-100ml-add" value="Aceite 100ml,aceites"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);recargarPaginaYMostrarCantidadCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-aceite-100ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-100ml-quit','boton-aceite-100ml-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
+              </div>
 
-                <button style="width:100%; margin-bottom: 10px;"  class="alineacionesButton btn btn-primary" onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
-                <button style="width:100%;" class="alineacionesButton btn btn-primary" onclick="irAPagina('semillas.html')">Ir a semillas y seguir comprando</button>
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <div id="carrousel-image-2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
+                          alt="Imagen 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
+                          alt="Imagen 2">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-image-2"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carrousel-image-2"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-aceite-10ml-add" value="Aceite 100ml,aceites"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);recargarPaginaYMostrarCantidadCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-aceite-10ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-10ml-quit','boton-aceite-10ml-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
             </div>
-          </div>
-       </div>
-      </div>
-    </div>
 
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p style="text-align: center;">Copyright &copy; 2023 NL Developments.
-            </div>
+            <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-primary"
+              onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
+            <button style="width:100%;" class="alineacionesButton btn btn-primary"
+              onclick="irAPagina('semillas.html')">Ir a semillas y seguir comprando</button>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <p style="text-align: center;">Copyright &copy; 2023 NL Developments.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
+  <!-- Additional Scripts -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/accordions.js"></script>
+
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
       }
-    </script>
+    }
+  </script>
 
 
-  </body>
+</body>
 
 </html>
