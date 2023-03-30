@@ -18,17 +18,35 @@ function mostrarLongitudArrayCarrito() {
 }
 
 function mostrarLosItemsParaElPopUp() {
-  var mensaje = "";
+  var articulosDeSemillas = "Semillas: ";
+  var articulosDeAceites = "Aceites: ";
+  
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
-    // var subtotal = arrayCarrito.quantity * parseInt(arrayCarrito.boton);
-    // total += subtotal;
-    mensaje += arrayCarrito.boton + " x " + arrayCarrito.quantity + ", ";
+    var boton = arrayCarrito.boton;
+    var quantity = arrayCarrito.quantity;
+
+    if (boton.includes("semillas")) {
+      articulosDeSemillas += boton.replace(",semillas", "") + " x " + quantity + ", ";
+    } else if (boton.includes("aceites")) {
+      articulosDeAceites += boton.replace(",aceites", "") + " x " + quantity + ", ";
+    }
   }
-  mensaje = mensaje.slice(0, -2); // Eliminar la última coma y espacio
+
+  if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
+    articulosDeSemillas = articulosDeSemillas.slice(0, -2); // Eliminar la última coma y espacio
+  } else {
+    articulosDeSemillas = ""
+  }
+
+  if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
+    articulosDeAceites = articulosDeAceites.slice(0, -2); // Eliminar la última coma y espacio
+  } else {
+    articulosDeAceites = ""
+  }
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
-  itemsDelCarrito.textContent = mensaje;
-};
+  itemsDelCarrito.innerHTML = articulosDeSemillas + "<br>" + articulosDeAceites;
+}
 
 
 // Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
@@ -101,39 +119,68 @@ function guardarCarrito(carrito) {
 
 //////////////////////////////// E N V I O  ////////////////////////////////
 
-// Funcion que envia un mensaje a whatsapp con el pedido realizado y su cantidad
-// Tambien obtiene el value de la seccion de cada boton, para luego replampazarlo por vacio, para poder enviar el mensaje por wpp separando por seeccion
+// La función realizarPedido() llama a las funciones calcularTotal() y generarMensaje() para obtener el total de la compra y generar el mensaje de pedido
+//  respectivamente. Luego, construye un enlace de WhatsApp y lo abre en una nueva ventana, y finalmente llama a la función 
+//  resetearCarritoYRecargarPagina() para limpiar el carrito de compras y recargar la página.
 function realizarPedido() {
+  var total = calcularTotal();
+  var mensaje = generarMensaje();
+  var enlace = "https://wa.me/543425087441/?text=" + mensaje;
+  window.open(enlace);
+  resetearCarritoYRecargarPagina();
+}
+
+// La función calcularTotal() itera sobre los elementos del carrito de compras y, aunque el código está comentado,
+//  debería calcular el subtotal de cada elemento y sumarlos al total de la compra.
+function calcularTotal() {
   var total = 0;
-  var mensajeSemillas = "Mi pedido de semillas es: ";
-  var mensajeAceite = "Mi pedido de aceite es: ";
-  
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
     var quantity = arrayCarrito.quantity;
     // var subtotal = quantity * parseInt(boton.slice(boton.indexOf("$") + 1));
     // total += subtotal;
+  }
+  return total;
+}
+
+// La función generarMensaje() construye un mensaje para el pedido, separando los productos en dos categorías: semillas y aceites. Luego, utiliza some() para verificar si 
+// hay algún elemento en el carrito de compras correspondiente a cada categoría, y si es así, construye el mensaje correspondiente, eliminando la última coma y espacio,
+//  reemplazando los espacios por %20 y agregando %0A al final para indicar un salto de línea. 
+//  Si no hay elementos en alguna categoría, devuelve una cadena vacía en su lugar.
+function generarMensaje() {
+  var mensajeSemillas = "Mi pedido de semillas: ";
+  var mensajeAceites = "Mi pedido de aceites: ";
+  
+  for (var i = 0; i < carritoDeCompras.length; i++) {
+    var arrayCarrito = carritoDeCompras[i];
+    var boton = arrayCarrito.boton;
+    var quantity = arrayCarrito.quantity;
 
     if (boton.includes("semillas")) {
       mensajeSemillas += boton.replace(",semillas", "") + " x " + quantity + ", ";
     } else if (boton.includes("aceites")) {
-      mensajeAceite += boton.replace(",aceites", "") + " x " + quantity + ", ";
+      mensajeAceites += boton.replace(",aceites", "") + " x " + quantity + ", ";
     }
   }
+
+  if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
+    mensajeSemillas = mensajeSemillas.slice(0, -2); // Eliminar la última coma y espacio
+    mensajeSemillas = mensajeSemillas.replace(/ /g, "%20");
+    mensajeSemillas += "%0A"  
+  } else {
+    mensajeSemillas = ""
+  }
+
+  if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
+    mensajeAceites = mensajeAceites.slice(0, -2); // Eliminar la última coma y espacio
+    mensajeAceites = mensajeAceites.replace(/ /g, "%20");
+    mensajeAceites += "%0A"
+  } else {
+    mensajeAceites = ""
+  }
   
-  mensajeSemillas = mensajeSemillas.slice(0, -2); // Eliminar la última coma y espacio
-  mensajeSemillas = mensajeSemillas.replace(/ /g, "%20");
-  mensajeSemillas += "%0A"
-  
-  mensajeAceite = mensajeAceite.slice(0, -2); // Eliminar la última coma y espacio
-  mensajeAceite = mensajeAceite.replace(/ /g, "%20");
-  mensajeAceite += "%0A"
-  
-  var mensaje = mensajeSemillas + mensajeAceite;
-  var enlace = "https://wa.me/543425087441/?text=" + mensaje;
-  window.open(enlace);
-  resetearCarritoYRecargarPagina()
+  return mensajeSemillas +  mensajeAceites;
 }
 
 //////////////////////////////// E N V I O  ////////////////////////////////
