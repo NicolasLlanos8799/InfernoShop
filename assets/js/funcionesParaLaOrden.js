@@ -18,8 +18,8 @@ function mostrarLongitudArrayCarrito() {
 }
 
 function mostrarLosItemsParaElPopUp() {
-  var articulosDeSemillas = "Semillas: ";
-  var articulosDeAceites = "Aceites: ";
+  var articulosDeSemillas = "<h6>Semillas:</h6>";
+  var articulosDeAceites = "<h6>Aceites:</h6>";
   
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
@@ -27,26 +27,27 @@ function mostrarLosItemsParaElPopUp() {
     var quantity = arrayCarrito.quantity;
 
     if (boton.includes("semillas")) {
-      articulosDeSemillas += boton.replace(",semillas", "") + " x " + quantity + ", ";
+      articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + "</li>";
     } else if (boton.includes("aceites")) {
-      articulosDeAceites += boton.replace(",aceites", "") + " x " + quantity + ", ";
+      articulosDeAceites += "<li>" + boton.replace(",aceites", "") + " x " + quantity + "</li>";
     }
   }
 
   if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
-    articulosDeSemillas = articulosDeSemillas.slice(0, -2); // Eliminar la última coma y espacio
+    articulosDeSemillas = "<ul>" + articulosDeSemillas + "</ul>"; 
   } else {
-    articulosDeSemillas = ""
+    articulosDeSemillas = "";
   }
 
   if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
-    articulosDeAceites = articulosDeAceites.slice(0, -2); // Eliminar la última coma y espacio
+    articulosDeAceites = "<ul>" + articulosDeAceites + "</ul>"; 
   } else {
-    articulosDeAceites = ""
+    articulosDeAceites = "";
   }
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
-  itemsDelCarrito.innerHTML = articulosDeSemillas + "<br>" + articulosDeAceites;
+  itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites;
 }
+
 
 
 // Funcion que suma el valor y cantidad al arrayCarrito, del boton cual fue seleccionado para ejecutar esta accion
