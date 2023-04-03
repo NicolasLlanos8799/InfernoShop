@@ -18,35 +18,38 @@ function mostrarLongitudArrayCarrito() {
 }
 
 function mostrarLosItemsParaElPopUp() {
-  var articulosDeSemillas = "<h6>Semillas:</h6>";
-  var articulosDeAceites = "<h6>Aceites:</h6>";
-  
+  var articulosDeSemillas = "<h6>Semillas: </h6>";
+  var articulosDeAceites = "<h6>Aceites: </h6>";
+
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
     var quantity = arrayCarrito.quantity;
-
+  
     if (boton.includes("semillas")) {
-      articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + "</li>";
+      articulosDeSemillas += "<li><button onclick='quitarValorYCantidad(\"" + boton + "\")'>Eliminar</button> " + boton.replace(",semillas", "") + " x " + quantity + "</li>";
+
     } else if (boton.includes("aceites")) {
-      articulosDeAceites += "<li>" + boton.replace(",aceites", "") + " x " + quantity + "</li>";
+      articulosDeAceites += "<li><button onclick='quitarValorYCantidad(\"" + boton + "\")'>Eliminar</button> " + boton.replace(",aceites", "") + " x " + quantity + "</li>";
     }
   }
 
-  if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
-    articulosDeSemillas = "<ul>" + articulosDeSemillas + "</ul>"; 
+  if (carritoDeCompras.some(item => item.boton.includes("semillas"))) {
+    articulosDeSemillas = "<ul>" + articulosDeSemillas + "</ul>";
   } else {
     articulosDeSemillas = "";
   }
 
-  if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
-    articulosDeAceites = "<ul>" + articulosDeAceites + "</ul>"; 
+  if (carritoDeCompras.some(item => item.boton.includes("aceites"))) {
+    articulosDeAceites = "<ul>" + articulosDeAceites + "</ul>";
   } else {
     articulosDeAceites = "";
   }
+  
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
   itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites;
 }
+
 
 
 
