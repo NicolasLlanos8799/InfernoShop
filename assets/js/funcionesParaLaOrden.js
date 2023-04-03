@@ -7,7 +7,7 @@ var longitudCarritoDeCompras = carritoDeCompras.length;
 
 ///////////////////////////////// A C C I O N E S//////////////////////////////////////////
 
-
+// Muestra la cantidad del carrito cuando inicia la pagina
 function mostrarLongitudArrayCarrito() {
   // Actualiza el contenido del elemento con el id "longitudCarrito"
   var elementoCarrito = document.getElementById("longitudCarrito");
@@ -67,6 +67,16 @@ function guardarValorYCantidad(valorBoton) {
   carritoDeCompras.push(arrayCarrito);
   guardarCarrito(carritoDeCompras);
   console.log("Valor del botón: " + valorBoton + ", cantidad de packs: " + quantityValue);
+  longitudCarritoDeCompras = carritoDeCompras.length;
+  actualizarCarritoEnPagina(arrayCarrito); // Agregar el producto al carrito en la página
+}
+
+function actualizarCarritoEnPagina(producto) {
+  // Crear un nuevo elemento HTML para el producto y agregarlo al carrito
+  var nuevoElemento = document.createElement('div');
+  nuevoElemento.textContent = 'Producto: ' + producto.boton + ', Cantidad: ' + producto.quantity;
+  var contenedorCarrito = document.getElementById('itemsDelCarrito');
+  contenedorCarrito.appendChild(nuevoElemento);
 }
 
 
@@ -207,7 +217,7 @@ function resetearCarritoYRecargarPagina() {
 }
 
 function recargarPaginaYMostrarCantidadCarrito() {
-  location.reload()
+//  location.reload() 
   mostrarLongitudArrayCarrito()
 }
 
