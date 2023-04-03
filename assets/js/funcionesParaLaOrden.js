@@ -29,12 +29,13 @@ function mostrarLongitudArrayCarrito() {
 function mostrarLosItemsParaElPopUp() {
   var articulosDeSemillas = "<h6>Semillas: </h6>";
   var articulosDeAceites = "<h6>Aceites: </h6>";
-  
+
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
     var quantity = arrayCarrito.quantity;
-    var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn' onclick='quitarValorYCantidad(\"" + boton + "\")'>";
+    var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn' data-index='" + i + "' data-item='" + boton + "'>";
+
 
     if (boton.includes("semillas")) {
       articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + botonEliminar + "</li>";
@@ -44,16 +45,32 @@ function mostrarLosItemsParaElPopUp() {
     }
   }
 
-  articulosDeSemillas = carritoDeCompras.some(item => item.boton.includes("semillas"))
-    ? `<ul>${articulosDeSemillas}</ul>` : "";
+  if (carritoDeCompras.some(item => item.boton.includes("semillas"))) {
+    articulosDeSemillas = "<ul>" + articulosDeSemillas + "</ul>";
+  } else {
+    articulosDeSemillas = "";
+  }
 
-  articulosDeAceites = carritoDeCompras.some(item => item.boton.includes("aceites"))
-    ? `<ul>${articulosDeAceites}</ul>` : "";
-
-
+  if (carritoDeCompras.some(item => item.boton.includes("aceites"))) {
+    articulosDeAceites = "<ul>" + articulosDeAceites + "</ul>";
+  } else {
+    articulosDeAceites = "";
+  }
+  
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
   itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites;
+
+  // Agregar un listener para el evento click en cada botón de eliminar item
+  var botonesEliminar = document.querySelectorAll('.eliminar-btn');
+  for (var i = 0; i < botonesEliminar.length; i++) {
+    botonesEliminar[i].addEventListener('click', function(e) {
+      var item = e.target.getAttribute('data-item');
+      quitarValorYCantidad(item);
+      mostrarLosItemsParaElPopUp();
+    });
+  }
 }
+
 
 
 
@@ -96,9 +113,13 @@ function quitarValorYCantidad(valorBoton) {
     var quantityInput = document.querySelector('.down-content .quantity-input');
     quantityInput.value = 1; // Resetea la cantidad del input a 1
     console.log("Valor del botón: " + valorBoton + " eliminado del carrito");
+
+    longitudCarritoDeCompras = carritoDeCompras.length; // Actualiza la longitud del carrito
+    
+    mostrarLongitudArrayCarrito(); // Actualiza la cantidad en la página
   }
-  recargarPaginaYMostrarCantidadCarrito()
 }
+
 
 
 // // Funcione que realice una viceversa de acciones entre los botones de quitar o agregar pedido, cuando una se muestra la otra se esconde
@@ -214,11 +235,6 @@ function resetearCarritoYRecargarPagina() {
   carritoDeCompras = []; // Limpiar carrito
   guardarCarrito(carritoDeCompras); // Guardar carrito vacío en localStorage
   location.reload(); // Recargar página
-}
-
-function recargarPaginaYMostrarCantidadCarrito() {
-//  location.reload() 
-  mostrarLongitudArrayCarrito()
 }
 
 // Funcion que redirige a una pagina
