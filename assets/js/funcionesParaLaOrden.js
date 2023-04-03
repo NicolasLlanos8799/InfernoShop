@@ -9,44 +9,52 @@ var longitudCarritoDeCompras = carritoDeCompras.length;
 
 
 function mostrarLongitudArrayCarrito() {
-   // Actualiza el contenido del elemento con el id "longitudCarrito"
-   var elementoCarrito = document.getElementById("longitudCarrito");
-   elementoCarrito.textContent = longitudCarritoDeCompras;
- 
-   // Imprime en la consola la cantidad del carrito
-   console.log("Cantidad del carrito: " + longitudCarritoDeCompras);
+  // Actualiza el contenido del elemento con el id "longitudCarrito"
+  var elementoCarrito = document.getElementById("longitudCarrito");
+  elementoCarrito.textContent = longitudCarritoDeCompras;
+
+  // Imprime en la consola la cantidad del carrito
+  console.log("Cantidad del carrito: " + longitudCarritoDeCompras);
 }
 
+
+
+// Muestra los items del carrito de compras en un popup. Los separa por tipo (semillas o aceites)
+// y los muestra en una lista con un botón para eliminar cada uno.
+// function mostrarLosItemsParaElPopUp() {
+//   // Variables para almacenar los items separados por tipo
+//   // Botón para eliminar cada item
+//   // Recorre el carrito de compras y agrega cada item a la lista correspondiente
+  
 function mostrarLosItemsParaElPopUp() {
-  var articulosDeSemillas = "<h6>Semillas:</h6>";
-  var articulosDeAceites = "<h6>Aceites:</h6>";
+  var articulosDeSemillas = "<h6>Semillas: </h6>";
+  var articulosDeAceites = "<h6>Aceites: </h6>";
   
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
     var quantity = arrayCarrito.quantity;
+    var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn' onclick='quitarValorYCantidad(\"" + boton + "\")'>";
 
     if (boton.includes("semillas")) {
-      articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + "</li>";
+      articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + botonEliminar + "</li>";
+
     } else if (boton.includes("aceites")) {
-      articulosDeAceites += "<li>" + boton.replace(",aceites", "") + " x " + quantity + "</li>";
+      articulosDeAceites += "<li>" + boton.replace(",aceites", "") + " x " + quantity + botonEliminar + "</li>";
     }
   }
 
-  if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
-    articulosDeSemillas = "<ul>" + articulosDeSemillas + "</ul>"; 
-  } else {
-    articulosDeSemillas = "";
-  }
+  articulosDeSemillas = carritoDeCompras.some(item => item.boton.includes("semillas"))
+    ? `<ul>${articulosDeSemillas}</ul>` : "";
 
-  if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
-    articulosDeAceites = "<ul>" + articulosDeAceites + "</ul>"; 
-  } else {
-    articulosDeAceites = "";
-  }
+  articulosDeAceites = carritoDeCompras.some(item => item.boton.includes("aceites"))
+    ? `<ul>${articulosDeAceites}</ul>` : "";
+
+
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
   itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites;
 }
+
 
 
 
@@ -79,6 +87,7 @@ function quitarValorYCantidad(valorBoton) {
     quantityInput.value = 1; // Resetea la cantidad del input a 1
     console.log("Valor del botón: " + valorBoton + " eliminado del carrito");
   }
+  recargarPaginaYMostrarCantidadCarrito()
 }
 
 
@@ -86,7 +95,7 @@ function quitarValorYCantidad(valorBoton) {
 // function alternarBotones(idBoton1, idBoton2) {
 //   var boton1 = document.getElementById(idBoton1);
 //   var boton2 = document.getElementById(idBoton2);
-  
+
 //   if (boton1.style.display === "none") {
 //     boton1.style.display = "block";
 //     boton2.style.display = "none";
@@ -152,7 +161,7 @@ function calcularTotal() {
 function generarMensaje() {
   var mensajeSemillas = "Mi pedido de semillas: ";
   var mensajeAceites = "Mi pedido de aceites: ";
-  
+
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
@@ -165,23 +174,23 @@ function generarMensaje() {
     }
   }
 
-  if (carritoDeCompras.some(item => item.boton.includes("semillas")))  {
+  if (carritoDeCompras.some(item => item.boton.includes("semillas"))) {
     mensajeSemillas = mensajeSemillas.slice(0, -2); // Eliminar la última coma y espacio
     mensajeSemillas = mensajeSemillas.replace(/ /g, "%20");
-    mensajeSemillas += "%0A"  
+    mensajeSemillas += "%0A"
   } else {
     mensajeSemillas = ""
   }
 
-  if (carritoDeCompras.some(item => item.boton.includes("aceites")))  {
+  if (carritoDeCompras.some(item => item.boton.includes("aceites"))) {
     mensajeAceites = mensajeAceites.slice(0, -2); // Eliminar la última coma y espacio
     mensajeAceites = mensajeAceites.replace(/ /g, "%20");
     mensajeAceites += "%0A"
   } else {
     mensajeAceites = ""
   }
-  
-  return mensajeSemillas +  mensajeAceites;
+
+  return mensajeSemillas + mensajeAceites;
 }
 
 //////////////////////////////// E N V I O  ////////////////////////////////
@@ -194,7 +203,7 @@ function generarMensaje() {
 function resetearCarritoYRecargarPagina() {
   carritoDeCompras = []; // Limpiar carrito
   guardarCarrito(carritoDeCompras); // Guardar carrito vacío en localStorage
- location.reload(); // Recargar página
+  location.reload(); // Recargar página
 }
 
 function recargarPaginaYMostrarCantidadCarrito() {
@@ -212,12 +221,12 @@ function irAPagina(pagina) {
 
 
 // Funciones para el quantity
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   // Obtener todos los elementos con la clase "quantity-input"
   var quantityInputs = document.querySelectorAll(".quantity-input");
 
   // Iterar sobre los elementos y agregar los eventos a los botones
-  quantityInputs.forEach(function(quantityInput) {
+  quantityInputs.forEach(function (quantityInput) {
     const decreaseButton = quantityInput.previousElementSibling;
     const increaseButton = quantityInput.nextElementSibling;
 
