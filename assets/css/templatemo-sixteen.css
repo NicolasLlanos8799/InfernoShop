@@ -107,13 +107,13 @@ body {
   .semillas-heading {
 	  width: 100%;
 	  height: 552px;
-	  background-image: url("https://loyaltygenetics.com/wp-content/uploads/2022/07/Loyalty-SHOP-2.jpg");
+	  background-image: url(../images/Semillas.png);
   }
   
   .aceites-heading {
 	  width: 100%;
 	  height: 552px;
-	  background-image: url("https://www.latercera.com/resizer/wEIoETCxU95vEY6palzG_ji07HU=/arc-anglerfish-arc2-prod-copesa/public/7E7CSKWYQZH6HBDYQ6PJDLCBEE.jpg");
+	  background-image: url(../images/Aceites.png);
   }
   
   .carpas-heading {
@@ -171,7 +171,7 @@ body {
   
   #preloader {
 	overflow: hidden;
-	background-image: url(../images/fondo.jpg);
+	/* background-image: url(../images/fondo.jpg); */
 	/* background-size: cover; */
 	left: 0;
 	right: 0;
@@ -366,28 +366,23 @@ body {
   }
   
   .banner-item-01 {
-	  padding: 300px 0px;
-	  background-image: url(../images/fondo.jpg);
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  background-position: center center;
-  }
-  
-  .banner-item-02 {
-	  padding: 300px 0px;
-	  background-image: url(../images/slide_02.jpg);
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  background-position: center center;
-  }
-  
-  .banner-item-03 {
-	  padding: 300px 0px;
-	  background-image: url(../images/slide_03.jpg);
-	  background-size: cover;
-	  background-repeat: no-repeat;
-	  background-position: center center;
-  }
+    padding: 16vw 0;
+	display: flex;
+    background-image: url(../images/fondo.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+	}
+
+
+	/* PARA CELULAR */
+	@media (max-width: 768px) {
+		.banner-item-01, .banner-item-02, .banner-item-03 {
+		  padding: 59px 0px !important;
+		  background-size: 100% !important;
+		  background-image: url(../images/Aceites2.png);
+		  height: 552px;
+		}
+	}
   
   .banner .banner-item {
 	  max-height: 600px;
