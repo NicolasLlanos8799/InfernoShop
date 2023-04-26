@@ -107,13 +107,13 @@ body {
   .semillas-heading {
 	  width: 100%;
 	  height: 552px;
-	  background-image: url(../images/Semillas.png);
+	  background-image: url(../images/Semillas.jpeg);
   }
   
   .aceites-heading {
 	  width: 100%;
 	  height: 552px;
-	  background-image: url(../images/Aceites.png);
+	  background-image: url(../images/Aceites.jpeg);
   }
   
   .carpas-heading {
@@ -368,7 +368,7 @@ body {
   .banner-item-01 {
     padding: 16vw 0;
 	display: flex;
-    background-image: url(../images/fondo.jpg);
+    background-image: url(../images/infernoGrowBanner.jpeg);
     background-size: 100%;
     background-repeat: no-repeat;
 	}
@@ -376,11 +376,23 @@ body {
 
 	/* PARA CELULAR */
 	@media (max-width: 768px) {
-		.banner-item-01, .banner-item-02, .banner-item-03 {
+		.banner-item-01 {
 		  padding: 59px 0px !important;
 		  background-size: 100% !important;
-		  background-image: url(../images/Aceites2.png);
+		  background-image: url(../images/InfernoGrow\(BannerMovil\).jpeg);
 		  height: 552px;
+		}
+
+		.semillas-heading {
+			width: 100%;
+			height: 552px;
+			background-image: url(../images/SemillasMovil.jpeg);
+		}
+		
+		.aceites-heading {
+			width: 100%;
+			height: 552px;
+			background-image: url(../images/AceitesMovil.jpeg);
 		}
 	}
   
@@ -465,6 +477,11 @@ body {
 	  border: 1px solid #eee;
 	  margin-bottom: 30px;
   }
+
+  .products-items {
+	border: 1px solid #eee;
+	margin-bottom: 0px;
+}
   
   .product-item .down-content {
 	  padding: 30px;
