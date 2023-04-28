@@ -106,13 +106,13 @@ body {
   
   .semillas-heading {
 	  width: 100%;
-	  height: 552px;
+	  height: 600px;
 	  background-image: url(../images/Semillas.jpeg);
   }
   
   .aceites-heading {
 	  width: 100%;
-	  height: 552px;
+	  height: 600px;
 	  background-image: url(../images/Aceites.jpeg);
   }
   
@@ -377,21 +377,20 @@ body {
 	/* PARA CELULAR */
 	@media (max-width: 768px) {
 		.banner-item-01 {
-		  padding: 59px 0px !important;
-		  background-size: 100% !important;
 		  background-image: url(../images/InfernoGrow\(BannerMovil\).jpeg);
-		  height: 552px;
+		  width: 100%;
+		  height: 600px;
 		}
 
 		.semillas-heading {
 			width: 100%;
-			height: 552px;
+			height: 600px;
 			background-image: url(../images/SemillasMovil.jpeg);
 		}
 		
 		.aceites-heading {
 			width: 100%;
-			height: 552px;
+			height: 600px;
 			background-image: url(../images/AceitesMovil.jpeg);
 		}
 	}
