@@ -14,7 +14,7 @@
 }
 
 .cart-icon img {
-  width: 50px;
+  width: 30px;
   /* Cambiar el tamaño a 50px */
 }
 
@@ -22,7 +22,7 @@
   float: left;
   margin-left: 820px;
   /* ajusta el margen según tu diseño */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .navbar-nav {
@@ -37,7 +37,8 @@
     margin: 0;
     order: 2;
     /* cambia el orden de aparición */
-    margin-left: 240px;
+    margin-left: 270px;
+    margin-top: 4px;
   }
 
   .navbar-nav {
@@ -47,21 +48,20 @@
 }
 
 .cart-count {
-  margin-left: 20px;
-  margin-top: -50px;
+  margin-left: 16px;
+  margin-top: -33px;
   background-color: red;
   color: white;
   font-size: 12px;
   font-weight: bold;
   padding: 2px 5px;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 /* Estilo para la transicion del carrousel  */
 .carousel-item {
