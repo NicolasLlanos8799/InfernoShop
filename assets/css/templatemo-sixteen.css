@@ -289,9 +289,17 @@ body {
   }
   .navbar .navbar-brand {
 	  float: 	left;
-	  margin-top: -12px;
+	  margin-top: 3px;
 	  outline: none;
   }
+  @media (max-width: 992px){
+	.navbar .navbar-brand {
+		float: 	left;
+		margin-top: -12px;
+		outline: none;
+	}
+  }
+
   .navbar .navbar-brand h2 {
 	  color: #fff;
 	  text-transform: uppercase;
@@ -330,8 +338,8 @@ body {
   .navbar .navbar-nav .nav-link.show,
   .navbar .navbar-nav .show>.nav-link {
 	  color: #fff;
-	  padding-bottom: 25px;
-	  border-bottom: 3px solid #166107;
+	  /* padding-bottom: 0px; */
+	  /* border-bottom: 3px solid #166107; */
   }
   .navbar .navbar-toggler-icon {
 	  background-image: none;
@@ -345,6 +353,7 @@ body {
 	  position: absolute;
 	  right: 30px;
 	  top: 20px;
+	  margin-right: -30px;
   }
   .navbar .navbar-toggler-icon:after {
 	  /* border-color: #232323;
