@@ -37,7 +37,7 @@
     margin: 0;
     order: 2;
     /* cambia el orden de aparición */
-    margin-left: 270px;
+    margin-left: 310px;
     margin-top: 4px;
   }
 
@@ -48,7 +48,7 @@
 }
 
 .cart-count {
-  margin-left: 16px;
+  margin-left: 13px;
   margin-top: -33px;
   background-color: red;
   color: white;
