@@ -5,7 +5,7 @@ const loyaltyContent = document.getElementById("loyaltyContent");
 const allproducts = document.querySelectorAll(".allproducts");
 
 document.addEventListener("DOMContentLoaded", function() {
-
+    loyaltyContent.style.display = "none";
 });
 
 riquiButton.addEventListener("click", function() {
