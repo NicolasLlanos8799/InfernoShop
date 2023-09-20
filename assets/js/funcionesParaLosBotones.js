@@ -7,11 +7,17 @@ const allproducts = document.querySelectorAll(".allproducts");
 document.addEventListener("DOMContentLoaded", function () {
     // Esperar 0.1 segundos (100 milisegundos) antes de ejecutar la función riquiButton
     setTimeout(function () {
-        hiddenAll();
+        hiddeAll();
     }, 100);
 });
 
-function hiddenAll() {
+function showAll() {
+    riquiContent.style.display = "none"; // Muestra el contenido de riquiButton
+    loyaltyContent.style.display = "none"; // Oculta el contenido de loyaltyButton
+    dataContent.style.display = "none";
+}
+
+function hiddeAll() {
     riquiContent.style.display = "none"; // Muestra el contenido de riquiButton
     loyaltyContent.style.display = "none"; // Oculta el contenido de loyaltyButton
     dataContent.style.display = "none";

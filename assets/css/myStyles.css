@@ -133,3 +133,7 @@ BOTON TRASH PARA ELIMINAR */
   border-color: #650909;
 }
 
+.darkMode {
+  background-color: #333333; /* Fondo oscuro por defecto */
+  color: #ffffff; /* Texto claro */
+}
