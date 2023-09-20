@@ -128,7 +128,12 @@ BOTON TRASH PARA ELIMINAR */
 }
 
 
-/* Oculta los elementos con la clase 'contenido' inicialmente */
-.contenido {
-  display: none;
+.bordoColor {
+  background-color: #650909;
+  border-color: #650909;
+}
+
+.darkMode {
+  background-color: #333333; /* Fondo oscuro por defecto */
+  color: #ffffff; /* Texto claro */
 }
