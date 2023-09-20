@@ -126,3 +126,14 @@ BOTON TRASH PARA ELIMINAR */
   text-decoration: none; /* Elimina el subrayado del enlace */
   color: inherit !important; /* Hereda el color del texto actual */
 }
+
+
+.bordoColor {
+  background-color: #650909;
+  border-color: #650909;
+}
+
+.darkMode {
+  background-color: #333333; /* Fondo oscuro por defecto */
+  color: #ffffff; /* Texto claro */
+}

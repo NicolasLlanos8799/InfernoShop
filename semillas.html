@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- NO ROBES MI CODIGO -->
-  <!-- NO ROBES MI CODIGO -->
+<!-- NO ROBES MI CODIGO -->
+<!-- NO ROBES MI CODIGO -->
+
 <head>
 
   <meta charset="utf-8">
@@ -24,9 +25,12 @@
 
   <!-- Archivos JavaScript locales -->
   <script defer src="assets/js/funcionesParaLaOrden.js"></script>
+  <script defer src="assets/js/funcionesParaLosBotones.js"></script>
 
   <!-- Archivos JavaScript de Bootstrap -->
   <script defer src="vendor/bootstrap/css/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
   <title>Semillas</title>
   <!--
@@ -74,7 +78,7 @@ https://templatemo.com/tm-546-sixteen-clothing
   <link rel="preload" as="image" href="assets/images/SemillasMovil.jpeg">
 </head>
 
-<body onload="mostrarLongitudArrayCarrito()">
+<body class="darkMode" onload="mostrarLongitudArrayCarrito()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">
@@ -91,10 +95,11 @@ https://templatemo.com/tm-546-sixteen-clothing
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <h2>Inferno<em>Grow Shop</em></h2>
+          <h2>Inferno<em> Grow Shop</em></h2>
         </a>
-        <button style="box-shadow: 0 0 0 0rem;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button style="box-shadow: 0 0 0 0rem;" class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="cart-icon">
@@ -148,21 +153,32 @@ https://templatemo.com/tm-546-sixteen-clothing
   </div>
 
 
+
+  <!-- Contenido que deseas mostrar/ocultar -->
   <div class="products">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="filters">
-            <ul>
-              <li class="active" data-filter="*">Todos los productos</li>
-            </ul>
+          <div class="text-center">
+            <button id="riquiButton" class="btn btn-danger bordoColor" >Riqui Genetics</button>
+            <button id="loyaltyButton" class="btn btn-danger">Loyalty</button>
           </div>
         </div>
-        <h2 class="h2Marcas">RIQUI GENETICS</h2>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="allproducts">
+    <!-- CONTENIDO RIQUI GENETIS -->
+    <div class="container" id="dataContent">
+      <div class="row">
+        <h2 class="h2Marcas" id="labelMarcas">RIQUI GENETICS</h2>
         <h6 class="h2Marcas">Todos los packs contienen 4 semillas.</h6>
         <div class="col-md-12">
           <div class="filters-content">
-            <div class="row grid">
+            <div class="row grid"  id="riquiContent">
               <div class="col-lg-3 col-md-3 all des">
                 <div class="product-item">
                   <div id="carrousel-image-1" class="carousel slide" data-bs-ride="carousel">
@@ -201,7 +217,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -243,7 +259,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-clerico-fotop-quit" value="Clerico fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-clerico-fotop-quit', 'boton-clerico-fotop-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -285,7 +301,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-macaco-auto-quit" value="Macaco Auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-macaco-auto-quit', 'boton-macaco-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -327,7 +343,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-toxic-quit" value="La toxic auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-toxic-quit', 'boton-toxic-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -369,7 +385,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-barrio-fotofem-quit" value="Del barrio fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-barrio-fotofem-quit', 'boton-barrio-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -411,7 +427,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-menta-granizada-quit" value="Menta granizada auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-menta-granizada-quit', 'boton-menta-granizada-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -453,7 +469,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-bainillascay-auto-quit" value="Bainillascay auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-bainillascay-auto-quit', 'boton-bainillascay-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -495,7 +511,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-voladora-fotofem-quit" value="Voladora fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-voladora-fotofem-quit', 'boton-voladora-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -537,7 +553,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-cheta-fotofem-quit" value="Cheta fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-cheta-fotofem-quit', 'boton-cheta-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -579,7 +595,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-princesa-fotofem-quit" value="Princesa fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-princesa-fotofem-quit', 'boton-princesa-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -621,7 +637,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-anesia-auto-quit" value="Anesia auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-anesia-auto-quit', 'boton-anesia-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
@@ -663,10 +679,138 @@ https://templatemo.com/tm-546-sixteen-clothing
                       pedido</button>
                     <!-- <button id="boton-1302-auto-quit" value="1302 A.C.A.B Auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-1302-auto-quit', 'boton-1302-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
+
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
               </div>
+            </div>
+              <!-- CONTENIDO LOYALTY -->
+            <div class="row grid"  id="loyaltyContent">
+              <!-- CONTENIDO DEL PRODUCTO 1  -->
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px"
+                    src="https://loyaltygenetics.com/wp-content/uploads/2022/12/loyalty-bora1.8tauto-01.jpg"
+                    class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+              <!-- CONTENIDO DEL PRODUCTO 1  -->
+
+              <!-- CONTENIDO DEL PRODUCTO 2  -->
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px"
+                    src="https://loyaltygenetics.com/wp-content/uploads/2022/12/loyalty-bora1.8tauto-01.jpg"
+                    class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+              <!-- CONTENIDO DEL PRODUCTO 2  -->
+
+              <!-- CONTENIDO DEL PRODUCTO 3  -->
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px"
+                    src="https://loyaltygenetics.com/wp-content/uploads/2022/11/loyalty-americandreamauto-01.jpg"
+                    class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+              <!-- CONTENIDO DEL PRODUCTO 3  -->
+
+              <!-- CONTENIDO DEL PRODUCTO 4  -->
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px"
+                    src="https://loyaltygenetics.com/wp-content/uploads/2022/11/loyalty-cubalibreauto-01.jpg"
+                    class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+              <!-- CONTENIDO DEL PRODUCTO 4  -->
+
+              <!-- CONTENIDO DEL PRODUCTO 5 -->
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px"
+                    src="https://loyaltygenetics.com/wp-content/uploads/2022/11/loyalty-oroblancofotoperiodica-01.jpg"
+                    class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
+                      class="alineacionesButton btn btn-primary"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+              <!-- CONTENIDO DEL PRODUCTO 5  -->
             </div>
 
             <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-primary"
@@ -679,25 +823,13 @@ https://templatemo.com/tm-546-sixteen-clothing
     </div>
   </div>
 
-  <!-- <div class="products">
-      <div class="col-md-12">
-        <ul class="pages">
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="sustrato2.html">2</a></li>
-          <!-- <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li> -->
-  <!-- <li><a href="sustrato2.html"><i class="fa fa-angle-double-right"></i></a></li>
-        </ul>
-      </div>
-    </div> -->
-
 
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="inner-content">
-            <p style="text-align: center;">Copyright &copy; 2023 NL Developments.
+            <!-- Copyright &copy; 2023 NL Developments. -->
           </div>
         </div>
       </div>
@@ -728,6 +860,7 @@ https://templatemo.com/tm-546-sixteen-clothing
       }
     }
   </script>
+
 
 
 </body>
