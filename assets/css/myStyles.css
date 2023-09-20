@@ -134,6 +134,6 @@ BOTON TRASH PARA ELIMINAR */
 }
 
 .darkMode {
-  background-color: #333333; /* Fondo oscuro por defecto */
+  background-color: black; /* Fondo oscuro por defecto */
   color: #ffffff; /* Texto claro */
 }
