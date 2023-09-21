@@ -354,7 +354,7 @@ body {
 	  position: absolute;
 	  right: 30px;
 	  top: 20px;
-	  margin-right: 0px;
+	  margin-right: -15px;
   }
   .navbar .navbar-toggler-icon:after {
 	  /* border-color: #232323;
