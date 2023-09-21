@@ -85,7 +85,7 @@
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: black;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 0.3rem;
@@ -102,7 +102,7 @@
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: black;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 0.3rem;
@@ -136,4 +136,8 @@ BOTON TRASH PARA ELIMINAR */
 .darkMode {
   background-color: black; /* Fondo oscuro por defecto */
   color: #ffffff; /* Texto claro */
+}
+
+.blanco {
+  filter: brightness(0) invert(1);
 }

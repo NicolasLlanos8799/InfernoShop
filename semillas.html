@@ -110,7 +110,7 @@ https://templatemo.com/tm-546-sixteen-clothing
         </div>
         <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: black;">
               <div class="modal-header">
                 <h5 class="modal-title" id="miModalLabel">Artículos en tu carrito</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -119,7 +119,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <p id="itemsDelCarrito"></p>
               </div>
               <div class="modal-footer">
-                <button onclick="realizarPedido()" type="button" class="btn btn-primary w-100">Realizar compra</button>
+                <button onclick="realizarPedido()" type="button" class="btn btn-danger w-100">Realizar compra</button>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ https://templatemo.com/tm-546-sixteen-clothing
       <div class="row">
         <div class="col-md-12">
           <div class="text-center">
-            <button id="riquiButton" class="btn btn-danger bordoColor">Riqui Genetics</button>
+            <button id="riquiButton" class="btn btn-danger">Riqui Genetics</button>
             <button id="loyaltyButton" class="btn btn-danger">Loyalty</button>
           </div>
         </div>
@@ -212,10 +212,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -254,10 +254,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-clerico-fotop-add" value="Clerico fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-clerico-fotop-quit" value="Clerico fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-clerico-fotop-quit', 'boton-clerico-fotop-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-clerico-fotop-quit" value="Clerico fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-clerico-fotop-quit', 'boton-clerico-fotop-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -296,10 +296,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-macaco-auto-add" value="Macaco Auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-macaco-auto-quit" value="Macaco Auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-macaco-auto-quit', 'boton-macaco-auto-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-macaco-auto-quit" value="Macaco Auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-macaco-auto-quit', 'boton-macaco-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -338,10 +338,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-toxic-add" value="La toxic auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-toxic-quit" value="La toxic auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-toxic-quit', 'boton-toxic-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-toxic-quit" value="La toxic auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-toxic-quit', 'boton-toxic-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -380,10 +380,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-barrio-fotofem-add" value="Del barrio fotofem,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-barrio-fotofem-quit" value="Del barrio fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-barrio-fotofem-quit', 'boton-barrio-fotofem-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-barrio-fotofem-quit" value="Del barrio fotofem,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-barrio-fotofem-quit', 'boton-barrio-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -422,10 +422,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-menta-granizada-add" value="Menta granizada auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-menta-granizada-quit" value="Menta granizada auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-menta-granizada-quit', 'boton-menta-granizada-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-menta-granizada-quit" value="Menta granizada auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-menta-granizada-quit', 'boton-menta-granizada-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -464,10 +464,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-bainillascay-auto-add" value="Bainillascay auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-bainillascay-auto-quit" value="Bainillascay auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-bainillascay-auto-quit', 'boton-bainillascay-auto-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-bainillascay-auto-quit" value="Bainillascay auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-bainillascay-auto-quit', 'boton-bainillascay-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -506,10 +506,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-voladora-fotofem-add" value="Voladora fotofem,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-voladora-fotofem-quit" value="Voladora fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-voladora-fotofem-quit', 'boton-voladora-fotofem-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-voladora-fotofem-quit" value="Voladora fotofem,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-voladora-fotofem-quit', 'boton-voladora-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -548,10 +548,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-cheta-fotofem-add" value="Cheta fotofem,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-cheta-fotofem-quit" value="Cheta fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-cheta-fotofem-quit', 'boton-cheta-fotofem-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-cheta-fotofem-quit" value="Cheta fotofem,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-cheta-fotofem-quit', 'boton-cheta-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -590,10 +590,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-princesa-fotofem-add" value="Princesa fotofem,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-princesa-fotofem-quit" value="Princesa fotofem,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-princesa-fotofem-quit', 'boton-princesa-fotofem-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-princesa-fotofem-quit" value="Princesa fotofem,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-princesa-fotofem-quit', 'boton-princesa-fotofem-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -632,10 +632,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-anesia-auto-add" value="Anesia auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-anesia-auto-quit" value="Anesia auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-anesia-auto-quit', 'boton-anesia-auto-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-anesia-auto-quit" value="Anesia auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-anesia-auto-quit', 'boton-anesia-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -674,10 +674,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <button class="increase-button">+</button>
                     </div>
                     <button id="boton-1302-auto-add" value="1302 A.C.A.B Auto,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-1302-auto-quit" value="1302 A.C.A.B Auto,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-1302-auto-quit', 'boton-1302-auto-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-1302-auto-quit" value="1302 A.C.A.B Auto,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value); alternarBotones('boton-1302-auto-quit', 'boton-1302-auto-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -701,10 +701,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
@@ -726,10 +726,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
 
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
@@ -752,10 +752,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
@@ -777,10 +777,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
@@ -802,10 +802,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                     <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
                     <button id="boton-gloriosa-fotoperiodica-add" value="La gloriosa fotoperiodica,semillas"
-                      class="alineacionesButton btn btn-primary"
+                      class="alineacionesButton btn btn-danger"
                       onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
                       pedido</button>
-                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-primary" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
                   </div>
                   <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
                 </div>
@@ -813,9 +813,9 @@ https://templatemo.com/tm-546-sixteen-clothing
               <!-- CONTENIDO DEL PRODUCTO 5  -->
             </div>
 
-            <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-primary"
+            <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-danger"
               onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
-            <button style="width:100%;" class="alineacionesButton btn btn-primary"
+            <button style="width:100%;" class="alineacionesButton btn btn-danger"
               onclick="irAPagina('aceites.html')">Ir a aceites y seguir comprando</button>
           </div>
         </div>
