@@ -34,7 +34,7 @@ function mostrarLosItemsParaElPopUp() {
     var arrayCarrito = carritoDeCompras[i];
     var boton = arrayCarrito.boton;
     var quantity = arrayCarrito.quantity;
-    var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn blanco' data-index='1' data-item='boton'>";
+    var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn blanco' data-index='" + i + "' data-item='" + boton + "'>";
 
 
     if (boton.includes("semillas")) {
