@@ -37,7 +37,7 @@
     margin: 0;
     order: 2;
     /* cambia el orden de aparición */
-    margin-left: 310px;
+    margin-left: 290px;
     margin-top: 4px;
   }
 
@@ -140,4 +140,9 @@ BOTON TRASH PARA ELIMINAR */
 
 .blanco {
   filter: brightness(0) invert(1);
+}
+
+
+.infernoGrowShopTitle {
+  font-size: 120px;
 }
