@@ -27,6 +27,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- LLAMANDO JAVA SCRIPT FUNCIONES ORDER -->
   <script src="assets/js/funcionesParaLaOrden.js"></script>
+  <script src="assets/js/funcionesParaLosBotones.js"></script>
   <!--
 
 TemplateMo 546 Sixteen Clothing
@@ -121,118 +122,208 @@ https://templatemo.com/tm-546-sixteen-clothing
   </div>
 
 
-  <div class="products">
+   <!-- Contenido que deseas mostrar/ocultar -->
+   <div class="products">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="filters">
-            <ul>
-              <li class="active" data-filter="*">Todos los productos</li>
-            </ul>
-          </div>
-        </div>
-        <h2 class="h2Marcas">Fertilizantes</h2>
-        <div class="col-md-12">
-          <div class="filters-content">
-            <div class="row grid">
-              <div class="col-lg-3 col-md-3 all des">
-                <div class="product-item">
-                  <div id="carousel-image-1" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
-                          alt="Imagen 1">
-                      </div>
-                      <div class="carousel-item">
-                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
-                          alt="Imagen 2">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-1"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-1"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-
-                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                  <div class="down-content">
-                    <div class="alineacionesButton quantity">
-                      <button class="decrease-button">-</button>
-                      <input type="number" value="1" min="1" max="10" class="quantity-input">
-                      <button class="increase-button">+</button>
-                    </div>
-                    <!-- LE PASA EL VALUE Fertilizantes PARA DETECTAR QUE CONTIENE EL VALUE Fertilizantes Y SEPARAR POR SECCION EN EL PEDIDO  -->
-                    <button id="boton-aceite-100ml-add" value="Aceite 100ml,Fertilizantes"
-                      class="alineacionesButton btn btn-danger"
-                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
-                      pedido</button>
-                    <!-- <button id="boton-aceite-100ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-100ml-quit','boton-aceite-100ml-add')" style="display: none;">Quitar pedido</button> -->
-                  </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
-                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-3 all des">
-                <div class="product-item">
-                  <div id="carrousel-image-2" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
-                          alt="Imagen 1">
-                      </div>
-                      <div class="carousel-item">
-                        <img style="width:400px;height:400px" src="assets/images/aceite.jpeg" class="d-block w-100"
-                          alt="Imagen 2">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carrousel-image-2"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carrousel-image-2"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                  <div class="down-content">
-                    <div class="alineacionesButton quantity">
-                      <button class="decrease-button">-</button>
-                      <input type="number" value="1" min="1" max="10" class="quantity-input">
-                      <button class="increase-button">+</button>
-                    </div>
-                    <!-- LE PASA EL VALUE Fertilizantes PARA DETECTAR QUE CONTIENE EL VALUE Fertilizantes Y SEPARAR POR SECCION EN EL PEDIDO  -->
-                    <button id="boton-aceite-10ml-add" value="Aceite 100ml,Fertilizantes"
-                      class="alineacionesButton btn btn-danger"
-                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
-                      pedido</button>
-                    <!-- <button id="boton-aceite-10ml-quit" value="Aceite 100ml" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-aceite-10ml-quit','boton-aceite-10ml-add')" style="display: none;">Quitar pedido</button> -->
-                  </div>
-                  <h6 class="alineacionesH6">Desde $3000 por pack</h6>
-                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
-                </div>
-              </div>
-            </div>
-
-            <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-danger"
-              onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
-            <button style="width:100%;" class="alineacionesButton btn btn-danger"
-              onclick="irAPagina('semillas.html')">Ir a semillas y seguir comprando</button>
+          <div class="text-center">
+            <!-- <button id="organicosButton" class="btn btn-danger">Organicos</button>
+            <button id="mineralesButton" class="btn btn-danger">Minerales</button> -->
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="allproducts" style="margin-top: 40px;">
+    <!-- CONTENIDO RIQUI GENETIS -->
+    <div class="container" id="dataContent">
+      <div class="row">
+        <!-- <h2 class="h2Marcas" id="labelMarcas">RIQUI GENETICS</h2>
+        <h6 class="h2Marcas">Todos los packs contienen 4 semillas.</h6> -->
+        <div class="col-md-12">
+          <div class="filters-content">
+            <div class="row grid" id="organicosContent">
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://elalquimistagrow.com/wp-content/uploads/2018/08/lixiviado.jpg"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-lixiviado-add" value="Lixiviado dorado,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://acdn.mitiendanube.com/stores/001/680/961/products/melaca-dorada-21-56342dc3028742eb2916208282423547-1024-1024.webp"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-melaca-dorada-add" value="Melaca dorada,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://elalquimistagrow.com/wp-content/uploads/2018/08/alga-delta-2.jpg"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-alga-delta-add" value="Alga delta,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://http2.mlstatic.com/D_NQ_NP_2X_979479-MLA70837565478_082023-F.webp"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-king-clon-add" value="King clon,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://acdn.mitiendanube.com/stores/001/244/286/products/maca-11-5fb19b495f9489c35e16171193257346-1024-1024.webp"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-maca-brew-add" value="Maca brew,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://acdn.mitiendanube.com/stores/002/804/353/products/mv-web1-8e656e4936e142086c16749428290362-1024-1024.webp"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-vamp-vegetativo-add" value="Vamp vegetativo,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 all des">
+                <div class="product-item">
+                  <img style="width:400px;height:400px" src="https://acdn.mitiendanube.com/stores/002/804/353/products/gf-web1-8b8cf830c46bf6009216749428996934-640-0.webp"
+                  class="d-block w-100" alt="Imagen 1">
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                  <div class="down-content">
+                    <div class="alineacionesButton quantity">
+                      <button class="decrease-button">-</button>
+                      <input type="number" value="1" min="1" max="10" class="quantity-input">
+                      <button class="increase-button">+</button>
+                    </div>
+                    <!-- LE PASA EL VALUE ACEITES PARA DETECTAR QUE CONTIENE EL VALUE ACEITES Y SEPARAR POR SECCION EN EL PEDIDO  -->
+                    <button id="boton-vamp-floracion-add" value="Vamp floracion,fertilizantes"
+                      class="alineacionesButton btn btn-danger"
+                      onclick="guardarValorYCantidad(this.value);mostrarLongitudArrayCarrito()">Agregar
+                      pedido</button>
+                    <!-- <button id="boton-gloriosa-fotoperiodica-quit" value="La gloriosa fotoperiodica,semillas" class="alineacionesButton btn btn-danger" onclick="quitarValorYCantidad(this.value);alternarBotones('boton-gloriosa-fotoperiodica-quit','boton-gloriosa-fotoperiodica-add')" style="display: none;">Quitar pedido</button> -->
+                  </div>
+
+                  <!-- CONTENIDO DEBAJO DE LA IMAGEN -->
+                </div>
+              </div>
+            </div>
+            <!-- CONTENIDO LOYALTY -->
+            <div class="row grid" id="mineralesContent">
+
+              <!-- CONTENIDO DEL PRODUCTO 3  -->
+           
+
+             
+            </div>
+
+            <button style="width:100%; margin-bottom: 10px;" class="alineacionesButton btn btn-danger"
+              onclick="obtenerCarrito();realizarPedido()">Realizar pedido</button>
+            <button style="width:100%;" class="alineacionesButton btn btn-danger"
+              onclick="irAPagina('index.html#Productos')">Ver todos los productos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Copyright &copy; 2023 NL Developments. -->
 
 
