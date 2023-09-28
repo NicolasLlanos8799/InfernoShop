@@ -29,6 +29,7 @@ function mostrarLongitudArrayCarrito() {
 function mostrarLosItemsParaElPopUp() {
   var articulosDeSemillas = "<h6>Semillas: </h6>";
   var articulosDeAceites = "<h6>Aceites: </h6>";
+  var articulosDeFertilizantes = "<h6>Fertilizantes: </h6>";
 
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
@@ -36,12 +37,12 @@ function mostrarLosItemsParaElPopUp() {
     var quantity = arrayCarrito.quantity;
     var botonEliminar = "<img src='assets/images/trash.svg' alt='Eliminar' class='eliminar-btn blanco' data-index='" + i + "' data-item='" + boton + "'>";
 
-
     if (boton.includes("semillas")) {
       articulosDeSemillas += "<li>" + boton.replace(",semillas", "") + " x " + quantity + botonEliminar + "</li>";
-
     } else if (boton.includes("aceites")) {
       articulosDeAceites += "<li>" + boton.replace(",aceites", "") + " x " + quantity + botonEliminar + "</li>";
+    } else if (boton.includes("fertilizantes")) {
+      articulosDeFertilizantes += "<li>" + boton.replace(",fertilizantes", "") + " x " + quantity + botonEliminar + "</li>";
     }
   }
 
@@ -56,9 +57,15 @@ function mostrarLosItemsParaElPopUp() {
   } else {
     articulosDeAceites = "";
   }
-  
+
+  if (carritoDeCompras.some(item => item.boton.includes("fertilizantes"))) {
+    articulosDeFertilizantes = "<ul>" + articulosDeFertilizantes + "</ul>";
+  } else {
+    articulosDeFertilizantes = "";
+  }
+
   var itemsDelCarrito = document.getElementById("itemsDelCarrito");
-  itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites;
+  itemsDelCarrito.innerHTML = articulosDeSemillas + articulosDeAceites + articulosDeFertilizantes;
 
   // Agregar un listener para el evento click en cada botón de eliminar item
   var botonesEliminar = document.querySelectorAll('.eliminar-btn');
@@ -70,6 +77,7 @@ function mostrarLosItemsParaElPopUp() {
     });
   }
 }
+
 
 
 
@@ -192,6 +200,7 @@ function calcularTotal() {
 function generarMensaje() {
   var mensajeSemillas = "Mi pedido de semillas: ";
   var mensajeAceites = "Mi pedido de aceites: ";
+  var mensajeFertilizantes = "Mi pedido de fertilizantes: ";
 
   for (var i = 0; i < carritoDeCompras.length; i++) {
     var arrayCarrito = carritoDeCompras[i];
@@ -202,27 +211,38 @@ function generarMensaje() {
       mensajeSemillas += boton.replace(",semillas", "") + " x " + quantity + ", ";
     } else if (boton.includes("aceites")) {
       mensajeAceites += boton.replace(",aceites", "") + " x " + quantity + ", ";
+    } else if (boton.includes("fertilizantes")) {
+      mensajeFertilizantes += boton.replace(",fertilizantes", "") + " x " + quantity + ", ";
     }
   }
 
   if (carritoDeCompras.some(item => item.boton.includes("semillas"))) {
     mensajeSemillas = mensajeSemillas.slice(0, -2); // Eliminar la última coma y espacio
     mensajeSemillas = mensajeSemillas.replace(/ /g, "%20");
-    mensajeSemillas += "%0A"
+    mensajeSemillas += "%0A";
   } else {
-    mensajeSemillas = ""
+    mensajeSemillas = "";
   }
 
   if (carritoDeCompras.some(item => item.boton.includes("aceites"))) {
     mensajeAceites = mensajeAceites.slice(0, -2); // Eliminar la última coma y espacio
     mensajeAceites = mensajeAceites.replace(/ /g, "%20");
-    mensajeAceites += "%0A"
+    mensajeAceites += "%0A";
   } else {
-    mensajeAceites = ""
+    mensajeAceites = "";
   }
 
-  return mensajeSemillas + mensajeAceites;
+  if (carritoDeCompras.some(item => item.boton.includes("fertilizantes"))) {
+    mensajeFertilizantes = mensajeFertilizantes.slice(0, -2); // Eliminar la última coma y espacio
+    mensajeFertilizantes = mensajeFertilizantes.replace(/ /g, "%20");
+    mensajeFertilizantes += "%0A";
+  } else {
+    mensajeFertilizantes = "";
+  }
+
+  return mensajeSemillas + mensajeAceites + mensajeFertilizantes;
 }
+
 
 //////////////////////////////// E N V I O  ////////////////////////////////
 
