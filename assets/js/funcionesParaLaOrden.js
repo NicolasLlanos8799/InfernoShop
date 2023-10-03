@@ -174,7 +174,7 @@ function guardarCarrito(carrito) {
 function realizarPedido() {
   var total = calcularTotal();
   var mensaje = generarMensaje();
-  var enlace = "https://wa.me/543425087441/?text=" + mensaje;
+  var enlace = "https://wa.me/543424082565/?text=" + mensaje;
   window.open(enlace);
   resetearCarritoYRecargarPagina();
 }
